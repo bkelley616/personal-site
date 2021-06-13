@@ -1,0 +1,127 @@
+@import "./constants";
+@import "./media";
+
+// https://www.cssscript.com/morphing-fullscreen-hamburger-menu-pure-htmlcss/
+label .hamburger {
+  position: absolute;
+  top: 30px;
+  left: 28px;
+  width: 30px;
+  height: 2px;
+  background: black;
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+label .hamburger:after,
+label .hamburger:before {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+label .hamburger:before {
+  top: -10px;
+}
+
+label .hamburger:after {
+  bottom: -10px;
+}
+
+label input {
+  display: none;
+}
+
+label input:checked + .menu .hamburger:after,
+label input:checked + .menu .hamburger {
+  background: white;
+}
+
+label input:checked + .menu:hover .hamburger:after,
+label input:checked + .menu:hover .hamburger {
+  background: $accent-blue-color;
+}
+
+label input:checked + .menu {
+  background: $popup-background-color;
+  box-shadow: 0 0 0 100vw $popup-background-color,
+    0 0 0 100vh $popup-background-color;
+  border-radius: 0;
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+}
+
+label input:checked + .menu + ul {
+  opacity: 1;
+  top: 50%;
+}
+
+label .menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  width: 75px;
+  height: 75px;
+  background: $accent-blue-color;
+  border-radius: 0 0 0 100%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0 0 0 $accent-blue-color, 0 0 0 0 $accent-blue-color;
+  cursor: pointer;
+}
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+  -webkit-transition: 0.4s 0s linear;
+  transition: 0.4s 0s linear;
+  a {
+    font-size: 2em;
+  }
+  overflow: auto;
+}
+
+label a {
+  margin-bottom: 1em;
+  @include phone-sm-height{
+    margin-bottom: .25em;
+  }
+  @include phone-xs-height{
+    margin-bottom: 0;
+  }
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+

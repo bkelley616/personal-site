@@ -1,0 +1,14 @@
+<script>
+  let cardContainers = document.querySelectorAll('#card-container');
+  let cards = document.querySelectorAll('#card-item');
+  let cardImages = document.querySelectorAll('#card-image');
+  imagesLoaded( cardImages, { background: true }, function() {
+    for (card of cards) {
+      card.classList.remove('loading')
+    }
+    for (cardContainer of cardContainers) {
+      cardContainer.replaceWith(...cardContainer.childNodes);
+    }
+
+});
+</script> 

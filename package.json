@@ -1,0 +1,35 @@
+{
+  "name": "bkelley",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "zola-build": "zola build",
+    "zola-watch": "zola serve",
+    "tailwind-build": "cross-env NODE_ENV=development TAILWIND_MODE=build postcss tailwind/tailwind.css -o public/tailwind.css",
+    "tailwind-watch": "cross-env NODE_ENV=development TAILWIND_MODE=watch postcss tailwind/tailwind.css -o public/tailwind.css -w",
+    "tailwind-prod": "cross-env NODE_ENV=production TAILWIND_MODE=build postcss tailwind/tailwind.css -o public/tailwind.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/line-clamp": "^0.2.0",
+    "@tailwindcss/typography": "^0.4.0",
+    "alpinejs": "^2.8.2",
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
+    "autoprefixer": "^10.2.5",
+    "bulma": "^0.9.2",
+    "bulma-timeline": "^3.0.4",
+    "imagesloaded": "^4.1.4",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.2",
+    "postcss": "^8.2.15"
+  }
+}

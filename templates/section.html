@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}
+<title> {{ section.title }}</title>
+<meta name="description" content="{{ section.description }} - Page {{ paginator.current_index }} ">
+{% endblock head %}
+
+{% block content %}
+<div id="blog-body" class="max-w-7xl shadow-xl mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-16 bg-primary-background-color">
+  <div data-aos="fade-right" :data-aos-offset="0" data-aos-duration="1000" >
+    {% if paginator.current_index == 1 %}
+      <section class="text-center text-accent-purple-color">
+      <h1 class="text-5xl tracking-tight font-extrabold md:text-6xl">
+        <span class="block xl:inline capitalize">{{section.components[1]}}</span>
+      </h1>
+      </section> 
+      {% endif %}
+
+      {% if paginator.current_index > 1 %}
+      <section class="text-center text-accent-purple-color">
+      <h1 class="text-5xl tracking-tight font-extrabold md:text-6xl">
+        <span class="block xl:inline capitalize">{{section.components[1]}} - Page {{paginator.current_index}}</span>
+      </h1>
+      </section>
+    {% endif %}
+  </div> 
+  
+
+  <section data-aos="fade-up" :data-aos-offset="0" data-aos-duration="1000" class="grid grid-cols-1 mx-auto mt-16 max-w-lg md:max-w-none md:grid-cols-2 xl:grid-cols-3 gap-8"> 
+    {% include "partials/card-section.html" %}
+  </section> 
+  <section>
+    {% include "partials/paginator.html" %}
+  </section>
+</div>
+{% include "partials/card-images-loaded.html" %}
+{% endblock content %}

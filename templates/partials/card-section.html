@@ -1,0 +1,19 @@
+{% for page in paginator.pages %}
+<div id="card-container" class="loading-container">
+<a id="card-item" href="{{ page.permalink | safe }}" class="post-card rounded-lg shadow-md transform transition duration-400 hover:-translate-y-2 hover:shadow-blue focus:-translate-y-2 focus:shadow-blue loading"> 
+  <div class="h-108 flex flex-col rounded-lg bg-secondary-background-color overflow-hidden">
+    <div class="flex-shrink-0">
+      <img id="card-image" class="h-48 w-full object-cover" src="/assets/blog/banner-images/{{ page.extra.banner | safe }}">
+    </div>
+    <div class="p-6 flex-1 p-6 flex flex-col justify-between">
+        <div class="hide-backface">
+          <span class="uppercase tracking-wide text-xs text-black bg-accent-blue-color px-2 py-1 rounded-full font-semibold">{{page.components[1]}}</span>
+          <p class="text-xl text-primary-text-color mt-2 font-semibold line-clamp-2">{{ page.title | safe }}</p>
+          <p class="text-secondary-text-color italic mt-1 line-clamp-3">{{ page.description | safe }}</p>
+        </div>
+        <p class="text-sm text-tertiary-text-color pt-2"> {{page.date | date(format="%B %e, %Y")}} · {{ page.reading_time }} min read</p>
+    </div>
+  </div> 
+</a> 
+</div>
+{% endfor %}  

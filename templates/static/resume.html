@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Brandon Kelley - Resume</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <link rel="stylesheet" href="/font.css" />
+    <link rel="stylesheet" href="/resume.css" />
+    <link rel="stylesheet" href="/fontawesome/css/fontawesome.css" />
+  </head>
+
+  <body onresize="resizeHandler()">
+    {% include "static/partials/menu.html" %}
+    <section id="content" class="container content-container px-5">
+      <div
+        class="
+          header-section
+          animate__animated
+          pb-5
+          mt-3
+          mb-5
+          is-flex is-align-items-center is-justify-content-space-between
+        "
+      >
+        <h2 class="title is-1 header">Resume</h2>
+        <a
+          class="animate__animated button download-button"
+          href="/assets/resume/Brandon-Kelley-Resume.pdf"
+          download
+        >
+          <span class="icon">
+            <i class="fas fa-file-download"></i>
+          </span>
+          <span>Download</span>
+        </a>
+      </div>
+      <p class="animate__animated animate__fadeInRight is-size-5 secondary-text-color">
+        The tabs below show the timeline of both my academic and professional
+        career. Use the download button above to get a copy of my actual resume
+        which provides more in depth info and contact details. Also, if you
+        haven't already, take some time to check out my
+        <a href="/projects">projects</a>!
+      </p>
+      <div
+        class="
+          is-flex is-justify-content-center is-flex-direction-column
+          pt-6
+          timeline-tabs
+        "
+      >
+        <div
+          class="
+            tabs
+            is-toggle is-fullwidth
+            animate__animated animate__fadeInUp
+          "
+        >
+          <ul>
+            <li
+              id="academic"
+              class="is-size-6-mobile is-size-5-tablet"
+              onclick="handleAcademicTabClick()"
+            >
+              <a class="tab" tabindex=0>
+                <span class="icon"
+                  ><i class="fas fa-graduation-cap" aria-hidden="true"></i
+                ></span>
+                <span>Academic</span>
+              </a>
+            </li>
+            <li
+              id="professional"
+              class="is-size-6-mobile is-size-5-tablet is-active"
+              onclick="handleProfessionalTabClick()"
+            >
+              <a class="tab" tabindex=0>
+                <span class="icon"
+                  ><i class="fas fa-briefcase" aria-hidden="true"></i
+                ></span>
+                <span>Professional</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="
+            is-flex is-flex-direction-column
+            pt-6
+            is-align-content-center is-align-items-center
+            animate__animated animate__fadeInUp
+          "
+        >
+          <div
+            id="academic-timeline"
+            class="hide-timeline animate__animated animate__fadeIn"
+          >
+            <div id="academicTimelineContainer" class="timeline is-centered">
+              <header class="timeline-header">
+                <span class="tag is-large">Today</span>
+              </header>
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">
+                    Georgia Institute of Technology
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Applied to Geogia Tech's Master in Analytics program
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">Cleveland State University</p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Graduated Summa Cum Laude in May 2021 with an ABET
+                    accredited bachelor's degree in Computer Science
+                  </p>
+                  <p class="is-size-6 mt-3"><b>GPA: 3.81</b></p>
+                </div>
+              </div>
+              <header class="timeline-header">
+                <span class="tag is-medium">2021</span>
+              </header>
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">Cleveland State University</p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Accepted into Computer Science program from the Washkewicz
+                    College of Engineering on a full ride scholarship via the
+                    <a href="https://www.ohiohighered.org/cof"
+                      >Choose Ohio First Scholarship program</a
+                    >
+                    and
+                    <a
+                      href="https://www.csuohio.edu/financial-aid/scholarships-2"
+                      >Cleveland State's President's Award</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <header class="timeline-header">
+                <span class="tag is-medium">2018</span>
+              </header>
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">
+                    Cuyahoga Community College (Western Campus)
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Left highschool a year early to do full time college (30
+                    credit hours) at my local community college through the
+                    College Credit Plus program
+                  </p>
+                  <p class="is-size-6 mt-3"><b>GPA: 4.00</b></p>
+                </div>
+              </div>
+              <header class="timeline-header">
+                <span class="tag is-medium">2017</span>
+              </header>
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">Highschool</p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Took College Board advanced placement Microeconomics,
+                    Macroeconomics, Physics, US History
+                  </p>
+                  <p class="is-size-6 mt-3"><b>GPA: ~4.25</b></p>
+                </div>
+              </div>
+              <header class="timeline-header">
+                <span class="tag is-large">Past</span>
+              </header>
+            </div>
+          </div>
+
+          <div
+            id="professional-timeline"
+            class="animate__animated animate__fadeIn"
+          >
+            <div id="professionalTimelineContainer" class="timeline is-centered">
+              <header class="timeline-header">
+                <span class="tag is-large">Today</span>
+              </header>
+
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">Progressive Insurance</p>
+                  <p class=""><b>Application Programmer Associate</b></p>
+                  <p><i>Mayfield, OH (remote)</i></p>
+                  <p>May 2021 - Present</p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Further contributed to the Direct Quoting Application as a full-stack developer on a Scrum/Agile development team with increased responsibility
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Participated in code reviews and best practices discussions
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Provided scrum master with Azure queries and visualizations
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Provided mentoring and training to new developers
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Joined and contributed to the Progressive inner source community
+                  </p>
+                </div>
+              </div>
+              <header class="timeline-header">
+                <span class="tag is-medium">2021</span>
+              </header>
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">Progressive Insurance</p>
+                  <p class=""><b>Application Programmer Intern</b></p>
+                  <p><i>Mayfield, OH (remote)</i></p>
+                  <p>August 2020 - May 2021</p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Performance based extension of prior internship with offer
+                    upon graduation
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Continued working remotely in the Direct Quoting group as a
+                    full-stack developer on a Scrum/Agile development team
+                    contributing to Progressive's Direct Quoting application
+                    with over 2 million monthly visitors
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Helped On-board/Train new intermediate and senior developers
+                    to the team
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Created Tester workbook manager application using
+                    Angular/ASP.NET/CosmosDB
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Created new UI automation test process using F# and Canopy
+                    Framework
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-marker is-icon">
+                  <i class="fa fa-flag"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="heading is-size-5">Progressive Insurance</p>
+                  <p class=""><b>Application Programmer Intern</b></p>
+                  <p><i>Mayfield, OH (remote)</i></p>
+                  <p>May 2020 - August 2020</p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Contributed to production quoting codebases with over 2
+                    million monthly visitors as part of Agile software
+                    development team (Angular, C#.NET)
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Created VBA program to streamline production bug retrieval
+                    and analysis saving business time and money
+                  </p>
+                  <p class="is-size-6 mt-4 secondary-text-color">
+                    Proposed and presented the new legal document and contracts
+                    handling process to ensure adherence to accessibility
+                    standards
+                  </p>
+                </div>
+              </div>
+
+              <header class="timeline-header">
+                <span class="tag is-large">2020</span>
+              </header>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script>
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload()
+    }
+  }
+  let academicTimelineContainer = document.getElementById("academicTimelineContainer")
+  let professionalTimelineContainer = document.getElementById("professionalTimelineContainer")
+  function resizeHandler(){
+    if(window.innerWidth > 1023) {
+      academicTimelineContainer.classList.add("is-centered");
+      professionalTimelineContainer.classList.add("is-centered");
+    } 
+    else { 
+      academicTimelineContainer.classList.remove("is-centered")
+      professionalTimelineContainer.classList.remove("is-centered")
+    }
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    let cards = document.getElementsByClassName("card-toggle")
+    let cardToggles = document.getElementsByClassName("card-toggle")
+    resizeHandler()
+    for (let i = 0; i < cardToggles.length; i++) {
+      cardToggles[i].addEventListener("click", (e) => {
+        e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle(
+          "hide"
+        )
+        e.currentTarget.parentElement.parentElement.childNodes[3].childNodes[1].classList.toggle(
+          "is-hidden"
+        )
+
+        e.currentTarget.parentElement.parentElement.childNodes[3].childNodes[1].classList.toggle(
+          "fadeIn"
+        )
+
+        e.currentTarget.parentElement.childNodes[3].childNodes[1].classList.toggle(
+          "rotate"
+        )
+      })
+    }
+  })
+  let navLinks = document.getElementsByClassName("menu-links")
+  document.getElementById("menu-links").style.pointerEvents = "none"
+  let contentClickable = true
+  function menuPress() {
+    contentClickable = !contentClickable
+    let root = document.documentElement
+    if (contentClickable) {
+      document.getElementById("content").style.pointerEvents = "auto"
+      document.getElementById("menu-links").style.pointerEvents = "none"
+      root.classList.remove("lock-scroll")
+    } else {
+      document.getElementById("content").style.pointerEvents = "none"
+      document.getElementById("menu-links").style.pointerEvents = "auto"
+      root.classList.add("lock-scroll")
+    }
+  }
+  let academicTab = document.getElementById("academic")
+  let academicTimeline = document.getElementById("academic-timeline")
+  let professionalTab = document.getElementById("professional")
+  let professionalTimeline = document.getElementById("professional-timeline")
+  function handleAcademicTabClick() {
+    professionalTab.classList.remove("is-active")
+    professionalTimeline.classList.add("hide-timeline")
+
+    academicTab.classList.add("is-active")
+    academicTimeline.classList.remove("hide-timeline")
+  }
+  function handleProfessionalTabClick() {
+    academicTab.classList.remove("is-active")
+    academicTimeline.classList.add("hide-timeline")
+
+    professionalTab.classList.add("is-active")
+    professionalTimeline.classList.remove("hide-timeline")
+  }
+</script>

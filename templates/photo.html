@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+<div class="bg-primary-background-color max-w-xl mx-auto min-h-screen shadow-xl px-4 sm:px-6 lg:px-8 py-16">
+  <section class="bg-secondary-background-color rounded-md shadow-md overflow-hidden" data-aos="zoom-in" :data-aos-offset="0" data-aos-duration="900">
+    <div id="photo-container" class="loading-container">
+      <div id="photo-card" class="loading">
+        <img id="photo-image"
+        src="/assets/photoblog-photos/{{ page.extra.photo }}"
+        alt="{{ page.description | safe}}"
+        />
+        <div class="p-4">
+          <p id="photo-date" class="text-accent-purple-color font-medium text-sm mt-2">{{page.date | date(format="%B %e, %Y")}}</p>
+          <p class="text-secondary-text-color font-semibold mt-1">
+            {{ page.description | safe }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+</div>
+
+<script>
+  let cardContainers = document.querySelectorAll('#photo-container');
+  let cards = document.querySelectorAll('#photo-card');
+  let cardImages = document.querySelectorAll('#photo-image');
+  imagesLoaded( cardImages, { background: true }, function() {
+    for (card of cards) {
+      card.classList.remove('loading')
+    }
+    for (card of cardContainers) {
+      card.replaceWith(...card.childNodes);
+    }
+});
+</script>
+
+{% endblock content %}

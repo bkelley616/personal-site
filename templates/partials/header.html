@@ -1,0 +1,181 @@
+<header  @keydown.escape="showMenu === true ? closeMenuModal() : showSearch === true ? closeSearchModal() : null" class="bg-tertiary-background-color shadow-2xl ring ring-gray-400 ring-1 ring-opacity-10">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="lg:divide-y lg:divide-faded-text-color">
+      <div class="h-16 flex justify-between">
+        <button id="searchButton" type="button" @click="openSearchModal(); $nextTick(() => { document.getElementById('searchModalInput').focus();});"
+          class="group leading-6 my-2 font-medium text-secondary-text-color flex items-center space-x-3 sm:space-x-4 hover:text-accent-blue-color transition-colors duration-200 w-full">
+          <svg width="24" height="24" fill="none"
+            class="text-secondary-text-color group-hover:text-accent-blue-color transition-colors duration-200">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+            </path>
+          </svg><span>Find a blog post</span>
+        </button> 
+  
+        <div class="relative z-10 flex items-center lg:w-64 pl-8 flex-shrink-0 justify-end">
+          <button id="menuButton" @click="openMenuModal(); $nextTick(() => { document.getElementById('menuModalClose').focus();});" type="button"
+            class="rounded-md mb-1 p-2 inline-flex items-center justify-center text-accent-blue-color hover:bg-accent-blue-color hover:text-black transition-colors duration-100"
+            aria-controls="menu" aria-expanded="showMenu">
+            <span class="sr-only">Open menu</span>
+            <span class="mr-2 font-semibold tracking-wide">Menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" aria-hidden="showMenu">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="hidden lg:py-2 lg:flex lg:space-x-8"> 
+        <a id="blog" href="/blog"
+          class="subnav-link">
+          All
+        </a>
+  
+        <a id="developer" href="/blog/developer"
+          class="subnav-link">
+          Developer
+        </a>
+  
+        <a id="economics" href="/blog/economics"
+          class="subnav-link">
+          Economics
+        </a>
+  
+        <a id="finance" href="/blog/finance"
+          class="subnav-link">
+          Finance
+        </a>
+        <a id="personal" href="/blog/personal"
+          class="subnav-link">
+          Personal
+        </a>
+        <a id="other" href="/blog/other"
+          class="subnav-link">
+          Other
+        </a>
+        <span class="text-white py-2 px-3 inline-flex items-center text-sm font-medium">|</span>
+        <a id="photoblog" href="/photoblog"
+          class="subnav-link">
+          Photoblog
+        </a>
+      </nav>
+    </div> 
+ 
+  <div x-show="showMenu || showSearch"
+  x-transition:enter="duration-150 ease-out"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  x-transition:leave="duration-150 ease-in"
+  x-transition:leave-start="opacity-100"
+  x-transition:leave-end="opacity-0"
+  class="z-20 fixed inset-0 bg-black bg-opacity-60" aria-hidden="!showMenu && !showSearch"></div>
+
+  <div x-show="showSearch" x-cloak
+      x-transition:enter="duration-150 ease-out"
+      x-transition:enter-start="opacity-0 scale-95"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="duration-150 ease-in"
+      x-transition:leave-start="opacity-100 scale-100" 
+      x-transition:leave-end="opacity-0 scale-95"
+      class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full pt-4 sm:pt-14 pb-4 px-4 transition transform origin-top modal-body">
+        <div @click.away="closeSearchModal()"  class="rounded-lg shadow-lg px-3 ring-1 ring-black ring-opacity-5 bg-popup-background-color divide-y divide-faded-text-color">
+          <div class="py-3 flex justify-between"> 
+            <div class="flex items-center pr-6 w-full">
+              <label class="flex" for="searchModalInput" id="searchModalInputLabel">
+                <svg width="24" height="24" fill="none"
+                class="text-accent-blue-color"> 
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"> 
+                  </path>
+                </svg>
+              </label>
+              <input x-model="searchQuery" @keyup="getSearchResults()" class="bg-popup-background-color text-secondary-text-color placeholder-tertiary-text-color border-none disable-default-focus w-full" aria-autocomplete="list" aria-labelledby="searchModalInputLabel" id="searchModalInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search Blog Posts" maxlength="64" type="search" value="">
+            </div>
+              <div class="self-center">
+                <button id="searchModalClose" @click="closeSearchModal()" type="button" class="group disable-default-focus bg-popup-button-background-color rounded-md inline-flex items-center justify-center text-secondary-text-color focus:bg-accent-blue-color hover:bg-accent-blue-color  transition-colors duration-200">
+                  <span class="text-secondary-text-color text-sm leading-5 py-1 px-2 border border-secondary-text-color rounded-md group-hover:border-black group-focus:border-black" >
+                    <span class="sr-only">Press escape to close the search modal</span>
+                    <kbd class="font-sans group-hover:text-black group-focus:text-black"><span>esc</span></kbd> 
+                  </span>
+                </button> 
+              </div> 
+            </div>   
+            <div class="py-3 space-y-1">
+              <template id="searchModalClose" x-for="result in searchResults" :key="result">
+                <a :href="`${result.ref}`" id="searchModalClose"  class="group flex items-center justify-between p-4 focus:bg-accent-blue-color focus:text-black hover:bg-accent-blue-color hover:text-black hover:rounded">
+                  <div>  
+                    <span x-html="result.doc.title" class="font-medium line-clamp-1 text-primary-text-color group-hover:text-black group-focus:text-black"></span>
+                    <span x-html="result.doc.description" class="italic ml-2 text-sm text-secondary-text-color line-clamp-3 md:line-clamp-2 group-hover:text-black group-focus:text-black"></span>
+                  </div>
+                  <span class="pl-8 transform -rotate-180 -scale-x-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                  </svg></span>
+                </a>
+              </template>
+              <div x-show="searchResults.length < 1 && searchQuery.length > 3" class="p-4">No Results found...</div>
+          </div> 
+        </div>
+      </div>
+ 
+      <nav x-show="showMenu" x-cloak
+      x-transition:enter="duration-150 ease-out"
+      x-transition:enter-start="opacity-0 scale-95"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="duration-150 ease-in"
+      x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-95"
+      class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full pt-4 sm:pt-14 pb-4 px-4 transition transform origin-top modal-body">
+        <div @click.away="closeMenuModal()"  class="rounded-lg shadow-lg px-3 ring-1 ring-black ring-opacity-5 bg-popup-background-color divide-y divide-faded-text-color lg:divide-y-0">
+          <div class="py-3">
+            <div class="flex items-center justify-between px-4">
+              <div>
+                <img class="h-12 w-auto rounded-full" src="{{get_url(path='/assets/imgs/profile-pic.jpg') }}" alt="Workflow">
+              </div>
+              <div class="-mr-2">
+                <button id="menuModalClose" @click="closeMenuModal()" type="button" class="bg-popup-background-color rounded-md p-2 inline-flex items-center justify-center text-tertiary-text-color hover:bg-accent-blue-color hover:text-black transition-colors duration-200">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="!showMenu">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div> 
+            </div> 
+            <div class="mt-3 px-2 space-y-1">
+              <a id="menuModalItem" href="/"  class="menuLink">Home</a>
+              <a id="menuModalItem" href="/blog" class="menuLink">Blog</a>
+              <a id="menuModalItem" href="/projects" class="menuLink">Projects</a>
+              <a id="menuModalItem" href="/resume" class="menuLink">Resume</a>
+              <a id="menuModalItem" href="/reading-log" class="menuLink">Reading Log</a>
+            </div>
+          </div> 
+          <div class="pt-0 pb-3 lg:hidden">
+            <div class="mt-3 px-2 space-y-1">
+              <p class="text-accent-purple-color px-2 py-1"> Blog Categories:</p>
+              <a id="blog-menuModal" href="/blog" class="menuLink">All</a>
+              <a id="developer-menuModal" href="/blog/developer" class="menuLink">Developer</a>
+              <a id="economics-menuModal" href="/blog/economics" class="menuLink">Economics</a>
+              <a id="finance-menuModal" href="/blog/finance" class="menuLink">Finance</a>
+              <a id="personal-menuModal" href="/blog/personal" class="menuLink">Personal</a>
+              <a id="other-menuModal" href="/blog/other" class="menuLink">Other</a>
+              <a id="photoblog-menuModal" href="/photoblog" class="menuLink">Photoblog</a>
+            </div>
+          </div> 
+        </div>
+      </nav>
+
+  <script>
+    let pathArray = window.location.pathname.split('/');
+    pathArray.shift();
+    if (pathArray[0] === "photoblog") {
+      document.getElementById("photoblog").classList.add('border-b-2', 'border-accent-blue-color')
+      document.getElementById("photoblog-menuModal").classList.add('text-accent-blue-color', 'underline')
+    } else if (pathArray[0] === "blog") {
+      pathArray.length > 1 && !(pathArray[1] == "page" || pathArray[1] == "") ? document.getElementById(pathArray[1]).classList.add('border-b-2', 'border-accent-blue-color') : document.getElementById("blog").classList.add('border-b-2', 'border-accent-blue-color')
+      pathArray.length > 1 && !(pathArray[1] == "page" || pathArray[1] == "") ? document.getElementById(`${pathArray[1]}-menuModal`).classList.add('text-accent-blue-color', 'underline') : document.getElementById("blog-menuModal").classList.add('text-accent-blue-color', 'underline')
+    }
+  </script>
+</div>
+</header>
+
+

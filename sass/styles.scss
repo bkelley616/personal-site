@@ -1,0 +1,39 @@
+
+//@import "../node_modules/bulma/bulma";
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
+@import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+
+@import "../node_modules/bulma-timeline/dist/css/bulma-timeline.sass";
+@import "../node_modules/animate.css/animate";
+
+@import "./constants";
+
+::-moz-selection {
+  color: black;
+  background: $accent-purple-color-variant;
+}
+
+::selection {
+  color: black;
+  background: $accent-purple-color-variant;
+}
+
+a:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: .25rem;
+  box-shadow: 0 0 0 2px  $accent-blue-color;
+}
+
+.disable-default-focus:focus{
+  border-radius: 0rem;
+  box-shadow: 0 0 0 0;
+}
+
+.secondary-text-color{
+  color: $secondary-text-color;
+}

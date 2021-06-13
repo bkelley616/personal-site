@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  {%- block head %}{% endblock %}
+
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="{{ get_url(path='/font.css') }}" />
+  <link rel="stylesheet" href="{{ get_url(path='/tailwind.css') }}" />
+  <link rel="stylesheet" href="{{ get_url(path='/aos/aos.css') }}" />
+  <link rel="stylesheet" href="{{ get_url(path='/topography-bg.css') }}" />
+
+  <script src="{{ get_url(path='/aos/aos.js') }}"></script>
+  <script src="{{ get_url(path='/imagesLoaded/imagesloaded.pkgd.min.js') }}"> </script>
+  <script src="{{ get_url(path='/alpine/alpine.js') }}" defer></script>
+  <style>
+    [x-cloak] {display: none !important;}
+</style>
+</head>
+
+<body  id="root" x-data="navHandler()" x-init="initializeBanner()" @focus-event.window="modalFocusAccessibilityHandler()" @show-banner-event.window="openBanner()" class="blank-space-bg bg-primary-background-color text-primary-text-color text-accent-pink-color" >
+
+  <header>
+    {% include "partials/banner.html" %}
+    {% include "partials/header.html" %}
+  </header>
+  <main class="overflow-hidden topography-bg">
+      {% block content %} {% endblock %}
+  </main>
+  <div>
+    {% include "partials/scrollToTop.html" %}
+  </div>
+  <footer>{% include "partials/footer.html" %}</footer>
+  
+  <script src="{{ get_url(path='/aos/aos.js') }}"></script>
+  <script>
+    AOS.init(); 
+  </script>
+
+<script type="text/javascript" src="{{ get_url(path='elasticlunr.min.js') }}"></script>
+<script type="text/javascript" src="{{ get_url(path='search_index.en.js') }}"></script>
+<script>
+  let searchOptions = {
+    bool: "AND",
+    expand: true,
+    fields: {
+      title: {boost: 3},
+      description: {boost: 2},
+      body: {boost: 1},
+    }
+  }
+
+  elasticlunr.clearStopWords();
+  var index = elasticlunr.Index.load(window.searchIndex);
+  elasticlunr.clearStopWords();
+
+  let html = document.getElementsByTagName("HTML")[0]
+  let navHandler = () => {
+    return {
+      showBanner: false,
+      showMenu: false,
+      showSearch: false,
+      searchQuery: "",
+      searchResults: [],
+
+      initializeBanner(){
+        let bannerPreviouslyDisplayed = JSON.parse(localStorage.getItem("bkelley-banner-expiration"));
+        if(bannerPreviouslyDisplayed != null){
+          lastSeenExpiration = bannerPreviouslyDisplayed.timestamp;
+          if(lastSeenExpiration < Date.now()){
+            let delay = (Math.random() * (10 - 5) + 5) * 60 * 1000
+            const event = new CustomEvent('show-banner-event'); 
+            setTimeout(function(){window.dispatchEvent(event) }, delay);
+          }
+        } else{
+          let delay = (Math.random() * (10 - 5) + 5) * 60 * 1000
+          const event = new CustomEvent('show-banner-event'); 
+          setTimeout(function(){window.dispatchEvent(event) }, delay);
+        }
+      },
+
+      openBanner(){
+        this.showBanner = true
+      },
+
+      closeBanner(){
+        let bannerLastSeenExpiration = {timestamp: new Date().getTime() + (Math.random() * (7 - 1) + 1)}
+        localStorage.setItem("bkelley-banner-expiration", JSON.stringify(bannerLastSeenExpiration));
+        this.showBanner = false
+      },
+
+      modalFocusAccessibilityHandler(){
+      if(this.showMenu === true && !(document.activeElement.id.includes("menuModal")))
+        {this.closeMenuModal()}
+        
+      if(this.showSearch === true && !(document.activeElement.id.includes("searchModal")))
+        {this.closeSearchModal()}
+      },
+
+      openModal(){
+        let scrollBarWidth = window.innerWidth - document.body.offsetWidth ;
+        html.style.cssText = `overflow: hidden; padding-right: ${scrollBarWidth}px;`
+      },
+
+      closeModal(){
+        html.style.cssText = ""
+      },
+
+      openMenuModal(){
+        this.openModal()
+        this.showMenu = true
+      },
+
+      closeMenuModal(){
+        this.closeModal()
+        this.showMenu = false
+        document.getElementById('menuButton').focus()
+      },
+
+      openSearchModal(){
+        this.openModal()
+        this.showSearch = true
+      },
+
+      closeSearchModal(){
+        this.closeModal()
+        this.searchResults = []
+        this.searchQuery = ""
+        this.showSearch = false
+        document.getElementById('searchButton').focus()
+      },
+
+      getSearchResults(){
+        const results = index.search(this.searchQuery, searchOptions).slice(0, 5)
+        const resultsCopy = JSON.parse(JSON.stringify(results));
+        for (const result of resultsCopy) {
+          result.doc.title = result.doc.title.replace( new RegExp(this.searchQuery, "gi"), match => `<span class="text-accent-blue-color group-hover:text-black group-focus:text-black">${match}</span>`);
+          result.doc.description = result.doc.description.replace( new RegExp(this.searchQuery, "gi"), match => `<span class="text-accent-blue-color group-hover:text-black group-focus:text-black">${match}</span>`);
+        }
+        this.searchResults = resultsCopy
+      }
+    };
+  }
+document.addEventListener('focusin', function(e) { const event = new CustomEvent('focus-event'); window.dispatchEvent(event)});
+
+AOS.init()
+</script>
+
+</body>
+
+
+</html> 

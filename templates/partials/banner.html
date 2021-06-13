@@ -1,0 +1,68 @@
+<div
+  x-cloak
+  x-show="showBanner"
+  class="fixed z-50 w-full bg-accent-purple-color-variant"
+  x-transition:enter="transition duration-500"
+  x-transition:enter-start="opacity-0 transform scale-y-0 -translate-y-1/2"
+  x-transition:enter-end="opacity-100 transform scale-y-100 translate-y-0"
+  x-transition:leave="transition duration-500"
+  x-transition:leave-start="opacity-100 transform scale-y-100 translate-y-0"
+  x-transition:leave-end="opacity-0 transform scale-y-0 -translate-y-1/2"
+>
+  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+    <div class="pr-16 sm:text-center sm:px-16">
+      <p class="font-medium text-black">
+        Enjoying the content? This site will always remain ad-free!
+        <a
+          href="https://www.patreon.com/bkelley"
+          class="text-black font-bold underline"
+          >Consider Supporting My Work <span aria-hidden="true">&rarr;</span></a
+        >
+      </p>
+    </div>  
+    <div
+      class="
+        absolute
+        inset-y-0
+        right-0
+        pt-1
+        pr-1
+        flex
+        items-start
+        sm:pt-1
+        sm:pr-2
+        sm:items-start
+      "
+    >
+      <button
+        @click="closeBanner()"
+        type="button"
+        class="
+          flex
+          p-2
+          rounded-md
+          hover:bg-red-400
+          transition-colors
+          duration-200
+        "
+      >
+        <span class="sr-only">Dismiss</span> 
+        <svg
+          class="h-6 w-6 text-black"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

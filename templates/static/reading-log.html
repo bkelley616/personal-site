@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Brandon Kelley - Reading Log</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <link rel="stylesheet" href="/font.css" />
+    <link rel="stylesheet" href="/timeline.css" />
+    <link
+      title="timeline-styles"
+      rel="stylesheet"
+      href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css"
+    />
+  </head>
+
+  <body onload="reSize()" onresize="reSize()">
+
+    {% include "static/partials/menu.html" %}
+
+    <section id="content" class="is-align-items-center container-fluid">
+      <div id="timeline-embed"></div>
+    </section>
+  </body>
+</html>
+
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+<script type="text/javascript">
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload()
+    }
+  }
+  let timelineDiv = document.getElementById("timeline-embed")
+  setTimeout
+  window.addEventListener("load", function () {
+    timeline = new TL.Timeline(
+      "timeline-embed",
+      "https://docs.google.com/spreadsheets/d/188kgSmnoiSaNd_qHu83bAQXexUtdsvHvQWtPBj7wDF8/pubhtml",
+      {
+        hash_bookmark: true,
+        timenav_height_percentage: 20,
+        timenav_mobile_height_percentage: 35,
+      }
+    )
+  })
+  function reSize() {
+    timelineDiv.style.height = `${document.documentElement.clientHeight - 64}px`
+  }
+  let navLinks = document.getElementsByClassName("menu-links")
+  document.getElementById("menu-links").style.pointerEvents = "none"
+  let contentClickable = true
+  let root = document.documentElement
+  function menuPress() {
+    contentClickable = !contentClickable
+    if (contentClickable) {
+      document.getElementById("content").style.pointerEvents = "auto"
+      document.getElementById("menu-links").style.pointerEvents = "none"
+      root.classList.remove("lock-scroll")
+    } else {
+      document.getElementById("content").style.pointerEvents = "none"
+      document.getElementById("menu-links").style.pointerEvents = "auto"
+      root.classList.add("lock-scroll")
+    }
+  }
+</script>

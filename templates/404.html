@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Not Found</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="stylesheet" href="{{ get_url(path="styles.css") }}" />
+    <link rel="stylesheet" href="{{ get_url(path="404.css") }}" />
+  </head>
+
+  <body>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div
+          class="container has-text-centered is-flex-direction-column is-justify-content-center animate__animated animate__backInDown"
+        >
+          <figure class="image is-128x128 is-inline-block">
+            <img class="is-rounded" src="{{
+            get_url(path='/assets/imgs/404-dog.png') }}">
+          </figure>
+          <h1 class="is-size-2 is-size-3-mobile mb-5 " > Looks like you are lost?</h1>
+          <a class="button is-outlined is-large" href="/">Go Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

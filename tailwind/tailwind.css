@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+
+@tailwind utilities;
+
+.root,
+#root,
+#docs-root {
+  --primary-background-color: #121212;
+  --secondary-background-color: #1e1e1e;
+  --tertiary-background-color: #272727;
+  --popup-background-color: #2c2c2c;
+  --popup-button-background-color: #323232;
+
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #ffffffde;
+  --tertiary-text-color: #ffffff99;
+  --faded-text-color: #ffffff61;
+
+  --accent-blue-color: #81d4fa;
+  --accent-blue-color-lowlight: #01579b66;
+  --accent-purple-color: #d1c4e9;
+  --accent-purple-color-variant: #b39ddb;
+  --accent-purple-color-variant-dark: #9575cd;
+}
+
+@layer base {
+  ::selection {
+    color: black;
+    background: var(--accent-purple-color-variant);
+  }
+
+  button {
+    @apply focus:outline-none focus:ring-2  focus:ring-accent-blue-color focus:rounded;
+  }
+
+  button:active {
+    @apply outline-none ring-2 ring-accent-blue-color rounded;
+  }
+
+  pre {
+    @apply text-primary-text-color p-4 overflow-auto rounded-xl;
+  }
+
+  h1 {
+    @apply text-primary-text-color text-5xl font-bold leading-normal mt-0 mb-2;
+  }
+
+  h2 {
+    @apply text-primary-text-color text-4xl font-bold leading-normal mt-0 mb-2;
+  }
+
+  h3 {
+    @apply text-primary-text-color text-3xl font-bold leading-normal mt-0 mb-2;
+  }
+
+  h4 {
+    @apply text-primary-text-color text-2xl font-bold leading-normal mt-0 mb-2;
+  }
+
+  h5 {
+    @apply text-primary-text-color text-xl font-bold leading-normal mt-0 mb-2;
+  }
+
+  h6 {
+    @apply text-primary-text-color text-lg font-bold leading-normal mt-0 mb-2;
+  }
+
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  li {
+    @apply ml-4 my-2;
+  }
+
+  blockquote {
+    @apply p-4 my-6 mx-2.5 bg-tertiary-background-color;
+    border-left: 10px solid var(--accent-blue-color);
+  }
+
+
+  a {
+    @apply focus:outline-none focus:ring-2  focus:ring-accent-blue-color focus:rounded;
+  }
+
+  a.post-card {
+    @apply focus:outline-none focus:ring-2  focus:ring-accent-blue-color focus:rounded-lg;
+  }
+
+  *.disable-default-focus {
+    @apply focus:outline-none focus:ring-0 focus:rounded-none;
+  }
+
+  *.disable-default-focus:active {
+    @apply outline-none ring-0 rounded-none;
+  }
+
+  .modal-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  button#searchModalClose:hover span {
+    color: black;
+    border-color: black;
+  }
+
+  button#searchModalClose {
+    @apply focus:rounded-md;
+    box-shadow: none;
+  }
+
+  .menuLink {
+    @apply block rounded-md px-3 py-2 text-base text-secondary-text-color font-medium hover:bg-accent-blue-color hover:text-black focus:bg-accent-blue-color focus:text-black focus:rounded-md;
+    background: linear-gradient(
+        to left,
+        var(--popup-background-color) 50%,
+        var(--accent-blue-color) 50%
+      )
+      right;
+    background-size: 205%;
+    transition: background-position 0.7s ease-in, color 0.7s ease-out;
+  }
+
+  .menuLink:hover,
+  .menuLink:focus {
+    box-shadow: none;
+    background-position: left;
+    transition: background-position 0.7s ease-in, color 0.7s ease-out;
+  }
+
+  .menuLink:active {
+    background: var(--accent-blue-color);
+  }
+
+  .subnav-link {
+    @apply text-secondary-text-color hover:bg-accent-blue-color hover:text-black hover:rounded-md py-2 px-3 inline-flex items-center text-sm font-medium;
+    transition: border-bottom 0.2s;
+  }
+  .subnav-link:hover {
+    transition: border-bottom 0s;
+  }
+
+  .scroll-to-top-threshold-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
+
+  .scroll-to-top-button {
+    @apply bg-accent-purple-color-variant shadow-md text-black flex justify-center p-3 rounded-full focus:rounded-full;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease;
+    z-index: 100;
+  }
+  button.scroll-to-top-button:focus,
+  button.scroll-to-top-button:hover {
+    border-radius: 100%;
+    background-color: var(--accent-purple-color-variant-dark);
+  }
+
+  .scroll-to-top-threshold-container.intersecting + .scroll-to-top-button {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .footer-link {
+    @apply text-base text-tertiary-text-color hover:text-accent-blue-color transition-colors duration-200;
+  }
+
+  .footer-icon {
+    @apply text-tertiary-text-color hover:text-accent-blue-color transition-colors duration-200;
+  }
+
+  .paginator {
+    @apply disable-default-focus border-t-2 border-transparent pt-4 inline-flex items-center text-sm font-medium text-tertiary-text-color hover:text-accent-blue-color hover:border-accent-blue-color focus:text-accent-blue-color focus:border-accent-blue-color;
+  }
+
+  .paginator-icon {
+    @apply h-5 w-5 text-tertiary-text-color group-hover:text-accent-blue-color group-focus:text-accent-blue-color;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  .blog-intro-background {
+    background-image: linear-gradient(
+      to right top,
+      #81d4fa,
+      #69c6f5,
+      #50b8f0,
+      #33a9eb,
+      #039be5
+    );
+    z-index: 1;
+  }
+
+  /*
+  https://imagesloaded.desandro.com/#webpack
+  https://blog.prototypr.io/how-to-create-placeholder-loading-animations-in-css-2334255aa74c
+  */
+  .loading-container {
+    @apply bg-secondary-background-color rounded-lg shadow-md pointer-events-none;
+    position: relative;
+    overflow: hidden;
+  }
+  .loading-container.banner{
+    border-radius: 0;
+  }
+
+  .loading-container.content{
+    @apply bg-tertiary-background-color rounded-xl;
+  }
+
+  .loading-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--popup-button-background-color) 50%,
+      transparent 100%
+    ) !important;
+    animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+  }
+  @keyframes load {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 100%;
+    }
+  }
+
+  .loading {
+    visibility: hidden;
+  }
+
+  .hide-backface {
+    backface-visiblility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+  }
+
+  a.content-link {
+    
+    color: var(--accent-blue-color);
+    box-shadow: inset 0 -0.125em 0 0 var(--secondary-background-color),
+      inset 0 -0.375em 0 0 var(--accent-blue-color-lowlight);
+    font-weight: 500;
+  }
+
+  a.content-link:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 -0.125em 0 0 var(--secondary-background-color),
+      inset 0 -0.375em 0 0 var(--accent-blue-color-lowlight),
+      0 0 0 2px var(--accent-blue-color);
+  }
+  a.content-link:hover,
+  a.content-link:active {
+    color: var(--accent-blue-color);
+  }
+}

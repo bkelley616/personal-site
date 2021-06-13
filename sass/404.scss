@@ -1,0 +1,23 @@
+@import "./constants";
+
+body {
+  background: $primary-background-color;
+  color: $primary-text-color;
+}
+
+a.button{
+  background-color: transparent;
+  color: $accent-blue-color;
+  border-color: $accent-blue-color;
+  &:hover {
+    color: black;
+    background-color: $accent-blue-color;
+    border-color: $accent-blue-color;
+  }
+  &:focus {
+    color: black;
+    background-color: $accent-blue-color;
+    border-color: $accent-blue-color;
+  }
+
+}

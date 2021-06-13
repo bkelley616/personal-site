@@ -1,0 +1,318 @@
+@import "./constants";
+@import "./media";
+
+html,
+body {
+  background: $primary-background-color;
+  color: $primary-text-color;
+  min-height: 100vh;
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+.content-container {
+  padding-top: 64px;
+  padding-bottom: 128px;
+}
+
+.header {
+  color: $primary-text-color;
+}
+
+.header-section {
+  flex-direction: column;
+  @include phone-lg {
+    flex-direction: row;
+  }
+
+  color: $primary-text-color;
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  animation: slideInLeft;
+  animation-duration: 1s;
+}
+
+.github-button {
+  background-color: $accent-purple-color-variant;
+  border-color: $accent-purple-color-variant;
+  color: black;
+  animation: bounce;
+  animation-duration: 1.5s;
+  animation-delay: 5.5s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $accent-purple-color-variant-dark;
+    color: black;
+  }
+}
+
+
+//https://nerdcowboy.com/blog/sliding-underlined-links/
+a.menu-link {
+  display: inline-block;
+  color: $secondary-text-color;
+  text-decoration: none;
+  background-image: linear-gradient($accent-blue-color, $accent-blue-color);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+a.menu-link:hover,
+a.menu-link:focus,
+a.menu-link:active {
+  background-size: 100% 0.1em;
+  color: $primary-text-color;
+}
+
+.card-header-title,
+.card-header-icon {
+  background: $tertiary-background-color;
+  color: $accent-blue-color;
+}
+
+.card-header-icon {
+  color: $accent-blue-color;
+  &:hover {
+    color: $accent-purple-color;
+  }
+}
+
+.fa-angle-down {
+  transition: transform 0.3s;
+}
+
+.rotate {
+  transition: transform 0.3s;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+@keyframes scale-move {
+  0% {
+    transform: translate(0, 0) scale(1, 1);
+  }
+  100% {
+    transform: scale(5, 5);
+  }
+}
+
+.content {
+  padding: 0;
+}
+
+div.card-content {
+  padding: 0;
+  height: 650px;
+
+  @include phone {
+    height: 600px;
+  }
+  @include phone-lg {
+    height: 450px;
+  }
+  @include tablet {
+    height: 400px;
+  }
+
+  &.extended {
+    height: 915px;
+
+    @include phone {
+      height: 825px;
+    }
+    @include phone-lg {
+      height: 575px;
+    }
+    @include tablet {
+      height: 450px;
+    }
+    @include desktop {
+      height: 400px;
+    }
+
+  
+  }
+
+  &.extended-xl {
+    height: 1150px;
+
+    @include phone {
+      height: 1000px;
+    }
+    @include phone-lg {
+      height: 650px;
+    }
+    @include tablet {
+      height: 500px;
+    }
+    @include desktop {
+      height: 400px;
+    }
+
+  
+  }
+
+  -webkit-transition: height, 0.5s linear;
+  -moz-transition: height, 0.5s linear;
+  -ms-transition: height, 0.5s linear;
+  -o-transition: height, 0.5s linear;
+  transition: height, 0.5s linear;
+}
+
+
+div.card{
+  background-color: $primary-background-color;
+  box-shadow: none;
+
+}
+
+.content h5 {
+  color: $primary-text-color;
+}
+
+div.card-content {
+  background-color: $secondary-background-color;
+  border-radius: 0 0 10px 10px !important;
+  color: $secondary-text-color;
+
+  &.hide {
+    height: 0px;
+    -webkit-transition: height, 0.5s linear;
+    -moz-transition: height, 0.5s linear;
+    -ms-transition: height, 0.5s linear;
+    -o-transition: height, 0.5s linear;
+    transition: height, 0.5s linear;
+  }
+
+  &.extended.hide {
+    height: 0px;
+    -webkit-transition: height, 0.5s linear;
+    -moz-transition: height, 0.5s linear;
+    -ms-transition: height, 0.5s linear;
+    -o-transition: height, 0.5s linear;
+    transition: height, 0.5s linear;
+  }
+
+  &.extended-xl.hide {
+    height: 0px;
+    -webkit-transition: height, 0.5s linear;
+    -moz-transition: height, 0.5s linear;
+    -ms-transition: height, 0.5s linear;
+    -o-transition: height, 0.5s linear;
+    transition: height, 0.5s linear;
+  }
+
+  a {
+    box-shadow: inset 0 -0.125em 0 0 $secondary-background-color, inset 0 -0.375em 0 0 $accent-blue-color-lowlight;
+    font-weight: 500;
+
+ 
+    &:focus{
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      border-radius: .25rem;
+      box-shadow: inset 0 -0.125em 0 0 $secondary-background-color, inset 0 -0.375em 0 0 $accent-blue-color-lowlight, 0 0 0 2px  $accent-blue-color;
+    }
+    &:hover,
+    &:active {
+      color: $accent-blue-color;
+    }
+  }
+ 
+
+  a.github-icon, a.playstore-icon {
+    box-shadow: none;
+    &:focus{
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      color: $accent-purple-color;
+    }
+    &:hover,
+    &:active {
+    color: $accent-purple-color;
+
+  }
+  }
+}
+
+a {
+  color: $accent-blue-color;
+  text-decoration: none;
+}
+
+.button:focus, .button.is-focused {
+  border-color: $accent-blue-color;
+}
+
+.fadeIn {
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+.slideUp1 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 0.25s;
+  animation-duration: 1s;
+}
+.slideUp2 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+  animation-duration: 0.8s;
+}
+
+.slideUp3 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 0.75s;
+  animation-duration: 0.75s;
+}
+
+.slideUp4 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  animation-duration: 0.7s;
+}
+
+.slideUp5 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 1.25s;
+  animation-duration: 0.65s;
+}
+.slideUp6 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 1.5s;
+  animation-duration: 0.6s;
+}
+
+.slideUp7 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 1.75s;
+  animation-duration: 0.55s;
+}
+
+.slideUp8 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+  animation-duration: 0.5s;
+}
+
+.slideUp9 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 2.25s;
+  animation-duration: 0.45s;
+}

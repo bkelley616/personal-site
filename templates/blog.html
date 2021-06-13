@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block head %}
+<title>Brandon Kelley - {{ section.title }}</title>
+<meta
+  name="description"
+  content="{{ section.description | safe }} - Page {{ paginator.current_index }} " 
+/>
+
+{% endblock head %} 
+{% block content %}
+
+<div id="blog-body" class="max-w-7xl shadow-xl mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-16 bg-primary-background-color">
+  {% if paginator.current_index == 1 %}
+  <div class="mb-16" data-aos="fade-right" :data-aos-offset="0" data-aos-duration="1000">
+    <section  class="relative hidden md:block" :aria-hidden="window.innerWidth <= 768">
+      <div class="blog-intro-background rounded-xl shadow-md h-96 xl:h-72 w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="relative flex flex-row z-10">
+        <img class="rounded-xl shadow-lg object-cover h-108 xl:h-80 w-auto" src="{{get_url(path='/assets/imgs/meet-the-author.png') }}"  alt="Meet the author picture">
+        <div class="flex flex-col justify-center text-black mx-4 xl:mx-16 mb-0 xl:mb-8">
+          <svg class="h-12 w-12 text-black opacity-25" fill="currentColor" viewBox="0 0 32 32" >
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <p class="mt-2 xl:mt-6 text-xl font-medium">Hey, I'm Brandon! Welcome to my blog! I currently live in Cleveland, Ohio where I work remotely as a software developer. My tech stack at work revolves around C# and Angular but in my free time I am dedicated to learning about functional programming. Currently my goal is to learn Elixir and the Phoenix framework.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="relative block md:hidden" :aria-hidden="window.innerWidth > 768">
+      <div class="blog-intro-background rounded-xl shadow-md h-5/6 w-full absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-full"></div>
+      <div class="relative flex flex-col items-center z-10">
+        <img class="rounded-xl shadow-lg h-72 w-auto " src="{{get_url(path='/assets/imgs/meet-the-author.png') }}"  alt="Meet the author picture">
+        <div class="flex flex-col justify-center text-black mt-4 mx-4 xl:mx-16 mb-0 xl:mb-8">
+          <svg class="h-12 w-12 text-black opacity-25" fill="currentColor" viewBox="0 0 32 32" >
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <p class="mt-2 mb-8 xl:mt-6 text-xl font-medium">Hey, I'm Brandon! Welcome to my blog! I currently live in Cleveland, Ohio where I work remotely as a software developer. My tech stack at work revolves around C# and Angular but in my free time I am dedicated to learning about functional programming. Currently my goal is to learn Elixir and the Phoenix framework.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  {% endif %}
+
+  {% if paginator.current_index == 1 %}
+  <section data-aos="fade-left" :data-aos-offset="0" data-aos-duration="1000" class="text-center text-accent-purple-color">
+  <p class="text-5xl tracking-tight font-extrabold md:text-6xl">
+    <span class="block xl:inline">Recent Posts</span>
+  </p>
+  </section> 
+  {% endif %}
+
+  {% if paginator.current_index > 1 %}
+  <section data-aos="fade-right" :data-aos-offset="0" data-aos-duration="1000" class="text-center text-accent-purple-color">
+  <p class="text-5xl tracking-tight font-extrabold md:text-6xl">
+    <span class="block  xl:inline">Recent Posts - Page {{paginator.current_index}}</span>
+  </p>
+  </section>
+  {% endif %}
+
+  <section data-aos="fade-up" :data-aos-offset="0" data-aos-duration="1000" class="grid grid-cols-1 mx-auto mt-16 max-w-lg md:max-w-none md:grid-cols-2 xl:grid-cols-3 gap-8"> 
+    {% include "partials/card-section.html" %}
+  </section> 
+
+
+  <section> 
+    {% include "partials/paginator.html" %}
+  </section>
+</div>
+
+{% include "partials/card-images-loaded.html" %}
+
+{% endblock content %}

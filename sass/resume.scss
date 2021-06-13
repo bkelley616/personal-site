@@ -1,0 +1,156 @@
+@import "./constants";
+@import "./media";
+
+body,html {
+  background: $primary-background-color;
+  color: $primary-text-color;
+  min-height: 100vh;
+}
+
+a{
+  color:$accent-blue-color;
+}
+
+.lock-scroll{
+  overflow: hidden;
+}
+
+.content-container {
+  padding-top: 64px;
+  padding-bottom: 128px;
+}
+
+.header {
+  color: $primary-text-color;
+}
+
+.header-section {
+  flex-direction: column;
+  @include phone-lg {
+    flex-direction: row;
+  }
+
+  color: $primary-text-color;
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  animation: slideInLeft;
+  animation-duration: 1s;
+}
+
+
+div.tabs.is-toggle li.is-active a { 
+  background-color: $accent-blue-color;
+  border-color: $accent-blue-color;
+  color: black;
+}
+
+
+.download-button {
+  background-color: $accent-purple-color-variant;
+  border-color: $accent-purple-color-variant;
+  color: black;
+  animation: bounce;
+  animation-duration: 1.5s;
+  animation-delay: 5.5s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $accent-purple-color-variant-dark;
+    color: black;
+  }
+}
+
+//https://nerdcowboy.com/blog/sliding-underlined-links/
+a.menu-link {
+  display: inline-block;
+  color: $secondary-text-color;
+  text-decoration: none;
+  background-image: linear-gradient($accent-blue-color, $accent-blue-color);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+a.menu-link:hover,
+a.menu-link:focus,
+a.menu-link:active {
+  background-size: 100% 0.1em;
+  color: $primary-text-color;
+}
+
+.tabs a { 
+  color: $accent-blue-color;
+  &:focus{
+    background-color: #f5f5f5;
+    border-color: #b5b5b5;
+    color: #363636; 
+  }
+}
+
+.hide-timeline{
+  display: none;
+}
+
+.timeline-tabs{
+  margin: auto;
+  max-width: 800px;
+}
+
+.tag{
+  color: black !important;
+  background-color: $accent-blue-color !important;
+}
+
+.timeline.is-centered .timeline-item:nth-of-type(2n+1)::before{
+  background-color: $accent-blue-color;
+}
+.timeline.is-centered .timeline-item::before{
+  background-color: $accent-blue-color;
+}
+
+.timeline .timeline-item .timeline-marker.is-icon>i {
+  color: black;
+}
+
+.timeline .timeline-item .timeline-marker.is-icon {
+  background: $accent-purple-color-variant;
+  border: .1em solid $accent-purple-color-variant;
+  height: 2.5em;
+  width: 2.5em;
+  left: -1.25em;
+}
+
+.timeline.is-centered .timeline-item:nth-of-type(2n) .timeline-marker.is-icon {
+  left: auto;
+  right: -1.25em;
+}
+
+p a {
+  color: $accent-blue-color;
+  text-decoration: none;
+  box-shadow: inset 0 -0.125em 0 0 $primary-background-color, inset 0 -0.375em 0 0 $accent-blue-color-lowlight;
+  font-weight: 500;
+
+
+  &:focus{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: .25rem;
+    box-shadow: inset 0 -0.125em 0 0 $primary-background-color, inset 0 -0.375em 0 0 $accent-blue-color-lowlight, 0 0 0 2px  $accent-blue-color;
+  }
+
+  &:hover,
+  &:active {
+    color: $accent-blue-color;
+  }
+
+}
+
+.button:focus, .button.is-focused {
+  border-color: $accent-blue-color;
+  
+}
+

@@ -1,0 +1,94 @@
+@import "./constants";
+@import "./media";
+
+body {
+  background: $primary-background-color;
+  color: $secondary-text-color;
+}
+
+a.home-icon {
+  color: $secondary-text-color;
+  text-decoration: none;
+}
+a.home-icon:hover,
+a.home-icon:focus,
+a.home-icon:active {
+  color: $accent-blue-color;
+  text-shadow: 0px 0px 24px $accent-blue-color;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  color: $accent-blue-color;
+}
+
+//https://nerdcowboy.com/blog/sliding-underlined-links/
+a.home-link {
+  color: $secondary-text-color;
+  text-decoration: none;
+  background-image: linear-gradient($accent-blue-color, $accent-blue-color);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+a.home-link:hover,
+a.home-link:focus,
+a.home-link:active {
+  background-size: 100% 0.1em;
+  color: $primary-text-color;
+}
+
+//https://usefulangle.com/post/85/css-typewriter-animation
+
+.typewriter {
+  animation-delay: 3s;
+  font-family:  Inconsolata, monospace;
+  display: inline-block;
+}
+
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 2px;
+  width: 0%;
+  animation: typing 2.5s steps(20, end) 1.5s forwards,  blink 0.75s step-end infinite;
+  white-space: nowrap;
+  font-size: 2.25em;
+  font-weight: 700;
+  border-right: 4px solid $accent-blue-color;
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $accent-blue-color;
+  }
+}
+
+.container.has-text-centered.is-flex-direction-column {
+  animation: fadeIn;
+  animation-duration: 2s; 
+}
+
+
+div.typewriter-text.is-size-2.is-size-4-mobile{
+  @include phone-sm-homescreen {
+    font-size: 1.25em !important;
+  }
+}

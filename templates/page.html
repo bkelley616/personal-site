@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block head %}
+<title> {{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+{% endblock head %}
+
+{% block content %}
+<div class="max-w-4xl shadow-xl mx-auto min-h-screen pb-16 bg-primary-background-color">
+  <section>
+    <div id="image-container" class="loading-container banner">
+      <div id="image-item" class=" loading">
+        <img id="image" class="h-48 w-full object-cover" src="/assets/blog/banner-images/{{ page.extra.banner }}">
+      </div>
+    </div>
+  </section>
+  <section data-aos="fade-up" :data-aos-offset="0" data-aos-duration="800" class="relative p-6 md:p-8 mx-4 sm:mx-6 lg:mx-8 -mt-16 rounded-lg shadow-md bg-secondary-background-color z-10">
+    <span class="uppercase tracking-wide text-sm text-black bg-accent-blue-color px-2 py-1 rounded-full font-semibold">{{page.components[1]}}</span>
+    <p class="text-5xl leading-tight mt-5 font-extrabold text-primary-text-color">{{ page.title | safe }}</p>
+    <p class="text-2xl mt-4 text-primary-text-color italic">{{ page.description | safe }}</p>
+    <p class="text-sm text-tertiary-text-color mt-2"> {{page.date | date(format="%B %e, %Y")}} · {{ page.reading_time }} min read</p>
+    <div class="mt-8 text-secondary-text-color">{{ page.content | safe }}</div>
+  </section>   
+</div> 
+
+<script>
+  let imageContainers = document.querySelectorAll('#image-container');
+  let imageItems = document.querySelectorAll('#image-item');
+  let images = document.querySelectorAll('#image');
+  imagesLoaded( images, { background: true }, function() {
+    for (image of imageItems) {
+      image.classList.remove('loading')
+    }
+    for (imageContainer of imageContainers) {
+      imageContainer.replaceWith(...imageContainer.childNodes);
+    }
+});
+</script> 
+{% endblock content %} 

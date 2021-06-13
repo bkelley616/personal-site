@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Brandon Kelley - Home</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="{{ get_url(path='fontawesome/css/fontawesome.css') }}"
+    />
+    <link rel="stylesheet" href="{{ get_url(path='/styles.css') }}" /> <link
+    rel="stylesheet" href="{{ get_url(path= '/font.css') }}" /> <link
+    rel="stylesheet" href="{{ get_url(path= '/home.css') }}" />
+  </head>
+
+  <body>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div
+          class="
+            container
+            has-text-centered
+            is-flex-direction-column is-justify-content-center
+          "
+        >
+          <figure class="image is-128x128 is-inline-block">
+            <img class="is-rounded" src="{{
+            get_url(path='/assets/imgs/profile-pic.jpg') }}" alt="profile picture">
+          </figure>
+          <br />
+          <div class="typewriter mt-5 mb-5">
+            <div class="typewriter-text is-size-2 is-size-4-mobile">
+              guest@bkelley:~$ cd&nbsp;
+            </div>
+          </div>
+          <br />
+          <a class="is-size-3 is-size-4-mobile home-link disable-default-focus" href="/blog">Blog</a>
+          <br /><br />
+          <a
+            class="is-size-3 is-size-4-mobile home-link disable-default-focus"
+            href="/projects"
+            >Projects</a
+          >
+          <br /><br />
+          <a
+            class="is-size-3 is-size-4-mobile home-link disable-default-focus"
+            href="/resume"
+            >Resume</a
+          >
+          <br /><br />
+          <a
+            class="is-size-3 is-size-4-mobile home-link disable-default-focus"
+            href="/reading-log"
+            >Reading Log</a
+          >
+          <br />
+          <div>
+            <a class="home-icon disable-default-focus" href="https://www.linkedin.com/in/bkelley616/"
+              ><i class="fab fa-linkedin is-size-2-mobile fa-3x my-6 mx-4" alt="linkedin"></i
+            ></a>
+            <a class="home-icon disable-default-focus" href="https://github.com/bkelley616"
+              ><i class="fab fa-github is-size-2-mobile fa-3x my-6 mx-4" alt="github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
