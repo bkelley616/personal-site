@@ -9,7 +9,7 @@
     "tailwind-build": "cross-env NODE_ENV=development TAILWIND_MODE=build postcss tailwind/tailwind.css -o public/tailwind.css",
     "tailwind-watch": "cross-env NODE_ENV=development TAILWIND_MODE=watch postcss tailwind/tailwind.css -o public/tailwind.css -w",
     "tailwind-prod": "cross-env NODE_ENV=production TAILWIND_MODE=build postcss tailwind/tailwind.css -o public/tailwind.css",
-    "prod-build": "cross-env NODE_ENV=production TAILWIND_MODE=build postcss tailwind/tailwind.css -o public/tailwind.css && zola build"
+    "prod-build": "zola build && cross-env NODE_ENV=production TAILWIND_MODE=build postcss tailwind/tailwind.css -o public/tailwind.css"
   },
   "author": "",
   "license": "ISC",
