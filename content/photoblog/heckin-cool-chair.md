@@ -4,5 +4,5 @@ description = "Heckin cool chair 🪑🐶"
 in_search_index = false
 
 [extra]
-photo = "chairs-are-cool.png"
+photo = "chairs-are-cool.jpg"
 +++

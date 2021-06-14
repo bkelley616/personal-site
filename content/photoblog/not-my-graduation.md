@@ -4,5 +4,5 @@ description = "(Not My) Graduation 🎓"
 in_search_index = false
 
 [extra]
-photo = "not-my-graduation.png"
+photo = "not-my-graduation.jpg"
 +++

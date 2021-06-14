@@ -4,5 +4,5 @@ description = "heckin confuse 🤔"
 in_search_index = false
 
 [extra]
-photo = "doin-me-a-confuse.png"
+photo = "doin-me-a-confuse.jpg"
 +++

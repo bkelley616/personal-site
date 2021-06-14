@@ -4,5 +4,5 @@ description = "Wow much professional 📷"
 in_search_index = false
 
 [extra]
-photo = "wow-much-professional.png"
+photo = "wow-much-professional.jpg"
 +++

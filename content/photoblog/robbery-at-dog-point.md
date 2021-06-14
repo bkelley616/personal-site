@@ -4,5 +4,5 @@ description = "Robbery at dog point 🙌🔫"
 in_search_index = false
 
 [extra]
-photo = "robbery-at-dog-point.png"
+photo = "robbery-at-dog-point.jpg"
 +++

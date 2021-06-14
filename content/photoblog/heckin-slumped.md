@@ -4,5 +4,5 @@ description = "Afternoon nap time 🛏️💤"
 in_search_index = false
 
 [extra]
-photo = "heckin-slumped.png"
+photo = "heckin-slumped.jpg"
 +++

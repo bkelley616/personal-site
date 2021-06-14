@@ -4,5 +4,5 @@ description = "😍🏍️"
 in_search_index = false
 
 [extra]
-photo = "2016-yamaha-FZ07.png"
+photo = "2016-yamaha-FZ07.jpg"
 +++

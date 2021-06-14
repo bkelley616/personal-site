@@ -4,5 +4,5 @@ description = "🌅"
 in_search_index = false
 
 [extra]
-photo = "golden-sky.png"
+photo = "golden-sky.jpg"
 +++

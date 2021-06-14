@@ -4,5 +4,5 @@ description = "🐕🚗"
 in_search_index = false
 
 [extra]
-photo = "fun-car-ride.png"
+photo = "fun-car-ride.jpg"
 +++

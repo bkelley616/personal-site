@@ -4,5 +4,5 @@ description = "too tired... dont care..."
 in_search_index = false
 
 [extra]
-photo = "too-tired-dont-care.png"
+photo = "too-tired-dont-care.jpg"
 +++

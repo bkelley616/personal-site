@@ -4,5 +4,5 @@ description = "Brother's Wedding 🤵👰💒"
 in_search_index = false
 
 [extra]
-photo = "brothers-wedding.png"
+photo = "brothers-wedding.jpg"
 +++

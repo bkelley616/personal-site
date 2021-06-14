@@ -4,5 +4,5 @@ description = "🥱"
 in_search_index = false
 
 [extra]
-photo = "big-yawn.png"
+photo = "big-yawn.jpg"
 +++

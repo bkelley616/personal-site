@@ -4,5 +4,5 @@ description = "Summertime chillin🌞"
 in_search_index = false
 
 [extra]
-photo = "summertime-chillin.png"
+photo = "summertime-chillin.jpg"
 +++

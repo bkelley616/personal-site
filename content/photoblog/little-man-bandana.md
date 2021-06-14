@@ -4,5 +4,5 @@ description = "🐣"
 in_search_index = false
 
 [extra]
-photo = "little-man-bandana.png"
+photo = "little-man-bandana.jpg"
 +++

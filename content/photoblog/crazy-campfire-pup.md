@@ -4,5 +4,5 @@ description = "Dad I think I heard something 😳🔥"
 in_search_index = false
 
 [extra]
-photo = "crazy-campfire-pup.png"
+photo = "crazy-campfire-pup.jpg"
 +++

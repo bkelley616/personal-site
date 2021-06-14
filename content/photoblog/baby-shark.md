@@ -4,5 +4,5 @@ description = "👶🦈"
 in_search_index = false
 
 [extra]
-photo = "baby-shark.png"
+photo = "baby-shark.jpg"
 +++

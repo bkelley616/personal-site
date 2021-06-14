@@ -4,5 +4,5 @@ description = "Family pool pic 👪"
 in_search_index = false
 
 [extra]
-photo = "family-pool-pic.png"
+photo = "family-pool-pic.jpg"
 +++

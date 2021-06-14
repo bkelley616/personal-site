@@ -4,5 +4,5 @@ description = "Couldn't have done it without you Opa 💜"
 in_search_index = false
 
 [extra]
-photo = "csu-bachelor-computer-science.png"
+photo = "csu-bachelor-computer-science.jpg"
 +++

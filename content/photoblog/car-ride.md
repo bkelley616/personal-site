@@ -4,5 +4,5 @@ description = "Grad Dinner 🎓"
 in_search_index = false
 
 [extra]
-photo = "car-ride.png"
+photo = "car-ride.jpg"
 +++

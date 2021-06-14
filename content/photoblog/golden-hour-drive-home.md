@@ -4,5 +4,5 @@ description = "Golden hour drive 🚗🌇"
 in_search_index = false
 
 [extra]
-photo = "golden-hour-drive-home.png"
+photo = "golden-hour-drive-home.jpg"
 +++

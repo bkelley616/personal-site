@@ -4,5 +4,5 @@ description = "Yummy 😋"
 in_search_index = false
 
 [extra]
-photo = "kavana.png"
+photo = "kavana.jpg"
 +++

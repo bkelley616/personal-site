@@ -4,5 +4,5 @@ description = "Ugly sweater competition winner 👕🎁"
 in_search_index = false
 
 [extra]
-photo = "winnies-ugly-sweater.png"
+photo = "winnies-ugly-sweater.jpg"
 +++
