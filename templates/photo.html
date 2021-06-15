@@ -1,4 +1,9 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block head %}
+<title> {{ page.description }}</title>
+<meta name="description" content="{{ page.description }}">
+{% endblock head %}
+{% block content %}
 <div class="bg-primary-background-color max-w-xl mx-auto min-h-screen shadow-xl px-4 sm:px-6 lg:px-8 py-16">
   <section class="bg-secondary-background-color rounded-md shadow-md overflow-hidden" data-aos="zoom-in" :data-aos-offset="0" data-aos-duration="900">
     <div id="photo-container" class="loading-container">
