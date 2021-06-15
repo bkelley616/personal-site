@@ -109,16 +109,16 @@ a.menu-link:active {
 
 div.card-content {
   padding: 0;
-  height: 650px;
+  height: 775px;
 
   @include phone {
-    height: 600px;
+    height: 675px;
   }
   @include phone-lg {
-    height: 450px;
+    height: 475px;
   }
   @include tablet {
-    height: 400px;
+    height: 450px;
   }
 
   &.extended {
