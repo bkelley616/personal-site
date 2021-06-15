@@ -116,7 +116,7 @@
   }
 
   .menuLink {
-    @apply block rounded-md px-3 py-2 text-base text-secondary-text-color font-medium hover:bg-accent-blue-color hover:text-black focus:bg-accent-blue-color focus:text-black focus:rounded-md;
+    @apply disable-default-focus block rounded-md px-3 py-2 text-base text-secondary-text-color font-medium hover:bg-accent-blue-color hover:text-black focus:bg-accent-blue-color focus:text-black focus:rounded-md;
     background: linear-gradient(
         to left,
         var(--popup-background-color) 50%,
@@ -135,6 +135,7 @@
 
   .menuLink:focus, .menuLink:active {
     background: var(--accent-blue-color);
+    transition: none;
   }
 
   .subnav-link {
