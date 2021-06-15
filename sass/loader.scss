@@ -1,5 +1,10 @@
 //https://projects.lukehaas.me/css-loaders/
+.loader-overlay {
+  z-index: 1000;
+}
+
 .loader {
+  z-index: 10000;
   color: #81d4fa;
   font-size: 90px;
   text-indent: -9999em;

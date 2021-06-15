@@ -1,10 +1,9 @@
 
-  <div id="loader" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-accent-blue-color z-50 pointer-events-none loader"></div>
-  <div id="loader-overlay" class="z-40 fixed pointer-events-none inset-0 bg-black bg-opacity-30"></div>
+  <div id="loader" class="fixed inset-0 m-auto text-accent-blue-color loader"></div>
+  <div id="loader-overlay" class="fixed inset-0 bg-black bg-opacity-40 loader-overlay"></div>
   <script>
     window.addEventListener('load', (event) => {
-    document.querySelector("#loader-overlay").remove();
-    document.querySelector("#loader").remove();
-});
-
+      document.querySelector("#loader-overlay").remove();
+      document.querySelector("#loader").remove();
+    });
   </script>
