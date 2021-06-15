@@ -127,14 +127,13 @@
     transition: background-position 0.7s ease-in, color 0.7s ease-out;
   }
 
-  .menuLink:hover,
-  .menuLink:focus {
+  .menuLink:hover {
     box-shadow: none;
     background-position: left;
     transition: background-position 0.7s ease-in, color 0.7s ease-out;
   }
 
-  .menuLink:active {
+  .menuLink:focus, .menuLink:active {
     background: var(--accent-blue-color);
   }
 
