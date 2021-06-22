@@ -18,7 +18,7 @@
     <p class="text-5xl leading-tight mt-5 font-extrabold text-primary-text-color">{{ page.title | safe }}</p>
     <p class="text-2xl mt-4 text-primary-text-color italic">{{ page.description | safe }}</p>
     <p class="text-sm text-tertiary-text-color mt-2"> {{page.date | date(format="%B %e, %Y")}} · {{ page.reading_time }} min read</p>
-    <div class="mt-8 text-secondary-text-color">{{ page.content | safe }}</div>
+    <div class="mt-8 text-secondary-text-color page-content">{{ page.content | safe }}</div>
   </section>   
 </div> 
 

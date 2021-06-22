@@ -284,4 +284,8 @@
   a.content-link:active {
     color: var(--accent-blue-color);
   }
+
+  .page-content p {
+    line-height: 1.75;
+  }
 }
