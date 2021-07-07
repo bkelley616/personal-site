@@ -1,17 +1,17 @@
 {% for page in paginator.pages %}
 <div id="card-container" class="loading-container">
-<a data-aos="fade-up" :data-aos-offset="0" data-aos-duration="1000" id="card-item" href="{{ page.permalink | safe }}" class="transition transform rounded-lg shadow-md post-card duration-400 hover:-translate-y-2 hover:shadow-blue focus:-translate-y-2 focus:shadow-blue loading"> 
-  <div class="flex flex-col overflow-hidden rounded-lg h-108 bg-secondary-background-color">
+<a  id="card-item" href="{{ page.permalink | safe }}" class="post-card duration-400 hover:-translate-y-2 hover:shadow-blue focus:-translate-y-2 focus:shadow-blue loading transition transform rounded-lg shadow-md"> 
+  <div data-aos="fade-up" :data-aos-offset="0" data-aos-duration="1000" class="h-108 bg-secondary-background-color flex flex-col overflow-hidden rounded-lg">
     <div class="flex-shrink-0">
       <img id="card-image" class="object-cover w-full h-48" src="/assets/blog/banner-images/{{ page.extra.banner | safe }}">
     </div>
     <div class="flex flex-col justify-between flex-1 p-6">
         <div class="hide-backface">
-          <span class="px-2 py-1 text-xs font-semibold tracking-wide text-black uppercase rounded-full bg-accent-blue-color">{{page.components[1]}}</span>
-          <p class="mt-2 text-xl font-semibold text-primary-text-color line-clamp-2">{{ page.title | safe }}</p>
-          <p class="mt-1 italic text-secondary-text-color line-clamp-3">{{ page.description | safe }}</p>
+          <span class="bg-accent-blue-color px-2 py-1 text-xs font-semibold tracking-wide text-black uppercase rounded-full">{{page.components[1]}}</span>
+          <p class="text-primary-text-color line-clamp-2 mt-2 text-xl font-semibold">{{ page.title | safe }}</p>
+          <p class="text-secondary-text-color line-clamp-3 mt-1 italic">{{ page.description | safe }}</p>
         </div>
-        <p class="pt-2 text-sm text-tertiary-text-color"> {{page.date | date(format="%B %e, %Y")}} · {{ page.reading_time }} min read</p>
+        <p class="text-tertiary-text-color pt-2 text-sm"> {{page.date | date(format="%B %e, %Y")}} · {{ page.reading_time }} min read</p>
     </div>
   </div> 
 </a> 
