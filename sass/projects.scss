@@ -71,6 +71,10 @@ a.menu-link:active {
   color: $primary-text-color;
 }
 
+.card-header-title{
+  cursor: pointer;
+}
+
 .card-header-title,
 .card-header-icon {
   background: $tertiary-background-color;
