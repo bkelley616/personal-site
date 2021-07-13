@@ -5,13 +5,13 @@
 
 {% endblock head %}
 {% block content %}
-  <div class="bg-primary-background-color max-w-5xl mx-auto min-h-screen shadow-xl px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-3 gap-2 md:gap-8">
+  <div class="bg-primary-background-color sm:px-6 lg:px-8 max-w-5xl min-h-screen px-4 py-16 mx-auto shadow-xl">
+    <div class="md:gap-8 grid grid-cols-3 gap-2">
       {% for page in paginator.pages %}
           <article data-aos="fade-up" :data-aos-offset="0" data-aos-duration="1000">
             <div id="photo-container" class="loading-container">
-              <a id="photo-card" href="{{ page.permalink | safe}}" class="group disable-default-focus shadow-md loading">
-                <img id="photo-image" class="filter grayscale rounded group-hover:grayscale-0 group-focus:grayscale-0 group-active:grayscale-0 transition-all duration-500" src="/assets/photoblog-photos/{{ page.extra.photo }}" alt="{{ page.description }}">
+              <a id="photo-card" href="{{ page.permalink | safe}}" class="group disable-default-focus loading shadow-md">
+                <img id="photo-image" class="filter grayscale group-hover:grayscale-0 group-focus:grayscale-0 group-active:grayscale-0 transition-all duration-500 rounded" src="/assets/photoblog-photos/thumbnail/{{ page.extra.photo }}" alt="{{ page.description }}">
               </a>
             </div>
           </article>
