@@ -75,6 +75,10 @@ a.menu-link:active {
   cursor: pointer;
 }
 
+.card-header-title:hover + .card-header-icon{
+  color: $accent-purple-color;
+}
+
 .card-header-title,
 .card-header-icon {
   background: $tertiary-background-color;
