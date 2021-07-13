@@ -1,472 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Brandon Kelley - Projects</title>
-    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="/fontawesome/css/fontawesome.css" />
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/menu.css" />
-    <link rel="stylesheet" href="/font.css" />
-    <link rel="stylesheet" href="/projects.css" />
-  </head>
 
-  <body>
-    {% include "static/partials/menu.html" %}
-    <section id="content" class="container px-5 content-container">
-      <div
-        class="
-          header-section
-          animate__animated
-          pb-5
-          mt-3
-          mb-5
-          is-flex is-align-items-center is-justify-content-space-between
-        "
-      >
-        <h2 class="title is-1 header">Projects</h2>
-        <a
-          class="animate__animated button github-button"
-          href="https://github.com/bkelley616?tab=repositories"
-        >
-          <span class="icon">
-            <i class="fab fa-github"></i>
-          </span>
-          <span>GitHub</span>
+<head>
+  <meta charset="utf-8" />
+  <title>Brandon Kelley - Projects</title>
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/fontawesome/css/fontawesome.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/menu.css" />
+  <link rel="stylesheet" href="/font.css" />
+  <link rel="stylesheet" href="/projects.css" />
+</head>
+
+<body>
+  {% include "static/partials/menu.html" %}
+  <section id="content" class="content-container container px-5">
+    <div
+      class=" header-section animate__animated is-flex is-align-items-center is-justify-content-space-between pb-5 mt-3 mb-5">
+      <h2 class="title is-1 header">Projects</h2>
+      <a class="animate__animated button github-button" href="https://github.com/bkelley616?tab=repositories">
+        <span class="icon">
+          <i class="fab fa-github"></i>
+        </span>
+        <span>GitHub</span>
+      </a>
+    </div>
+
+    <div class="card is-fullwidth animate__animated slideUp1 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          bkelley.me - Personal Website / Blog using Zola
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
         </a>
-      </div>
-
-      <div class="card is-fullwidth mt-6 animate__animated slideUp1">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            bkelley.me - Personal Website / Blog using Zola
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                You are currently on it - it's this website! It was created
-                using a static site generator built on
-                <a href="https://www.rust-lang.org/">Rust.</a> It is hosted and
-                integrated with
-                <a href="https://www.netlifycms.org/">Netlify CMS</a>
-              </p>
-              <ul>
-                <li>
-                  <a href="https://www.getzola.org/">Zola</a> generates static
-                  pages at build-time using markdown files in the content
-                  directory
-                </li>
-                <li>
-                  <a href="https://www.netlifycms.org/">Netlify CMS</a> provides
-                  github integration to add pages from the admin console
-                </li>
-                <li>
-                  The site uses <a href="https://bulma.io/">Bulma</a> and
-                  <a href="https://tailwindcss.com/">Tailwind</a> for the
-                  styling library,
-                  <a href="https://fontawesome.com/">Font Awesome</a>, <a href="https://heroicons.com/">Hero Icons</a>, and <a href="https://www.heropatterns.com/">Hero Patterns</a> for icons/svgs,
-                  and <a href="https://animate.style/">Animate.css</a> /
-                  <a href="https://github.com/michalsnik/aos"
-                    >Animate On Scroll</a
-                  >
-                  for animation libraries
-                </li>
-                <li>
-                  Reading Log created with
-                  <a href="https://timeline.knightlab.com/"> TimelineJS</a>
-                </li>
-              </ul>
-              <div
-                class="
-                  is-flex
-                  is-flex-direction-row
-                  is-justify-content-flex-end
-                  is-align-items-center
-                "
-              >
-                <a class="github-icon" href="https://github.com/bkelley616/"
-                  ><i class="fab fa-github-square is-size-2-mobile fa-3x"></i
-                ></a>
-              </div>
+      </header>
+      <div class="card-content hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              You are currently on it - it's this website! It was created
+              using a static site generator built on
+              <a href="https://www.rust-lang.org/">Rust.</a> It is hosted and
+              integrated with
+              <a href="https://www.netlifycms.org/">Netlify CMS</a>
+            </p>
+            <ul>
+              <li>
+                <a href="https://www.getzola.org/">Zola</a> generates static
+                pages at build-time using markdown files in the content
+                directory
+              </li>
+              <li>
+                <a href="https://www.netlifycms.org/">Netlify CMS</a> provides
+                github integration to add pages from the admin console
+              </li>
+              <li>
+                The site uses <a href="https://bulma.io/">Bulma</a> and
+                <a href="https://tailwindcss.com/">Tailwind</a> for the
+                styling library,
+                <a href="https://fontawesome.com/">Font Awesome</a>, <a href="https://heroicons.com/">Hero Icons</a>,
+                and <a href="https://www.heropatterns.com/">Hero Patterns</a> for icons/svgs,
+                and <a href="https://animate.style/">Animate.css</a> /
+                <a href="https://github.com/michalsnik/aos">Animate On Scroll</a>
+                for animation libraries
+              </li>
+              <li>
+                Reading Log created with
+                <a href="https://timeline.knightlab.com/"> TimelineJS</a>
+              </li>
+            </ul>
+            <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
+              <a class="github-icon" href="https://github.com/bkelley616/"><i
+                  class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="card is-fullwidth mt-6 animate__animated slideUp2">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            KUMetriX - Stock Tracker Web Application
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                A stock tracker app built with the
-                <a href="https://safe-stack.github.io/">SAFE Stack</a> using the
-                <a href="https://github.com/Zaid-Ajaj/SAFE.Simplified"
-                  >Feliz SAFE Template</a
-                >
-                hosted on
-                <a
-                  href="https://azure.microsoft.com/en-us/services/app-service/web/"
-                  >Azure Web App Service</a
-                >
-              </p>
-              <ul>
-                <li>
-                  Basic Authentication / Profile Storage (Azure hosted MongoDB)
-                </li>
-                <li>Argon2id Password Hashing (OWASP Standard)</li>
-                <li>
-                  Elmish MVU Single Page Application (built on top of React)
-                </li>
-                <li>Supports Time Travel Debugging (Redux DevTools)</li>
-                <li>Persistent State with Local Storage</li>
-                <li>Secrets/Environment variables using config.json</li>
-              </ul>
-              <div
-                class="
-                  is-flex
-                  is-flex-direction-row
-                  is-justify-content-space-between
-                  is-align-items-center
-                "
-              >
-                <a class="is-size-5 mx-5">Demo Site</a>
-                <a
-                  class="github-icon"
-                  href="https://github.com/bkelley616/KUMetriX-Public"
-                  ><i class="fab fa-github-square is-size-2-mobile fa-3x"></i
-                ></a>
-              </div>
+    <div class="card is-fullwidth animate__animated slideUp2 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          KUMetriX - Stock Tracker Web Application
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              A stock tracker app built with the
+              <a href="https://safe-stack.github.io/">SAFE Stack</a> using the
+              <a href="https://github.com/Zaid-Ajaj/SAFE.Simplified">Feliz SAFE Template</a>
+              hosted on
+              <a href="https://azure.microsoft.com/en-us/services/app-service/web/">Azure Web App Service</a>
+            </p>
+            <ul>
+              <li>
+                Basic Authentication / Profile Storage (Azure hosted MongoDB)
+              </li>
+              <li>Argon2id Password Hashing (OWASP Standard)</li>
+              <li>
+                Elmish MVU Single Page Application (built on top of React)
+              </li>
+              <li>Supports Time Travel Debugging (Redux DevTools)</li>
+              <li>Persistent State with Local Storage</li>
+              <li>Secrets/Environment variables using config.json</li>
+            </ul>
+            <div class=" is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+              <a class="is-size-5 mx-5">Demo Site</a>
+              <a class="github-icon" href="https://github.com/bkelley616/KUMetriX-Public"><i
+                  class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="card is-fullwidth mt-6 slideUp3">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            URL Classification - ML Classification Algorithm Comparisons in F#
-            ML .NET
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                This project uses the
-                <a href="https://www.unb.ca/cic/datasets/url-2016.html"
-                  >ISCX-URL2016 URL dataset</a
-                >
-                and
-                <a
-                  href="https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet"
-                  >ML .NET</a
-                >
-                in F# to evaluate 5 different machine learning algorithms
-                performance at training a multiclass classification model. It is
-                able to be easily extended to create a prediction engine.
-              </p>
-              <ul>
-                <li>
-                  5 URL classes (Benign, Defacement, Spam, Phishing, malware)
-                </li>
-                <li>~35k data rows in each data file</li>
-                <li>Uses 2 different features sets for comparison</li>
-                <li>Evaluated 5 different algorithms performance</li>
-              </ul>
-              <div
-                class="
-                  is-flex
-                  is-flex-direction-row
-                  is-justify-content-flex-end
-                  is-align-items-center
-                "
-              >
-                <a
-                  class="github-icon"
-                  href="https://github.com/bkelley616/URLClassification"
-                  ><i class="fab fa-github-square is-size-2-mobile fa-3x"></i
-                ></a>
-              </div>
+    <div class="card is-fullwidth slideUp3 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          URL Classification - ML Classification Algorithm Comparisons in F#
+          ML .NET
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              This project uses the
+              <a href="https://www.unb.ca/cic/datasets/url-2016.html">ISCX-URL2016 URL dataset</a>
+              and
+              <a href="https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet">ML .NET</a>
+              in F# to evaluate 5 different machine learning algorithms
+              performance at training a multiclass classification model. It is
+              able to be easily extended to create a prediction engine.
+            </p>
+            <ul>
+              <li>
+                5 URL classes (Benign, Defacement, Spam, Phishing, malware)
+              </li>
+              <li>~35k data rows in each data file</li>
+              <li>Uses 2 different features sets for comparison</li>
+              <li>Evaluated 5 different algorithms performance</li>
+            </ul>
+            <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
+              <a class="github-icon" href="https://github.com/bkelley616/URLClassification"><i
+                  class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="card is-fullwidth mt-6 slideUp4">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            CIS 470 Mobile App Development - React Native Port
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content extended-xl hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                Upon starting CIS 470 - Mobile App Development my senior year
-                with Professor Zhao, I learned that he was planning on moving
-                the course to
-                <a href="https://reactnative.dev/">React Native</a> in the
-                future but has not been able to yet. Using this opportunity I
-                offered to do the course in React Native rather than in vanilla
-                Android java that it was currently in. Furthermore my final
-                project was to create a github repo(note the github link below
-                may not work as it is was private upon my leaving) that gave set
-                up instructions for React Native and walk through tutorials of
-                each homework assignment. The repo featured concepts such as
-                package management and the redux state pattern
-              </p>
-              <p>
-                This project port laid the foundation for every future student
-                to have the option to do the course in React Native as he uses
-                the content I created to create new lecture and homework
-                materials.
-              </p>
-              <div
-                class="
-                  is-flex
-                  is-flex-direction-row
-                  is-justify-content-flex-end
-                  is-align-items-center
-                "
-              >
-                <a
-                  class="github-icon"
-                  href="https://github.com/wenbingcsu/reactnative"
-                  ><i class="fab fa-github-square is-size-2-mobile fa-3x"></i
-                ></a>
-              </div>
+    <div class="card is-fullwidth slideUp4 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          CIS 470 Mobile App Development - React Native Port
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content extended-xl hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              Upon starting CIS 470 - Mobile App Development my senior year
+              with Professor Zhao, I learned that he was planning on moving
+              the course to
+              <a href="https://reactnative.dev/">React Native</a> in the
+              future but has not been able to yet. Using this opportunity I
+              offered to do the course in React Native rather than in vanilla
+              Android java that it was currently in. Furthermore my final
+              project was to create a github repo(note the github link below
+              may not work as it is was private upon my leaving) that gave set
+              up instructions for React Native and walk through tutorials of
+              each homework assignment. The repo featured concepts such as
+              package management and the redux state pattern
+            </p>
+            <p>
+              This project port laid the foundation for every future student
+              to have the option to do the course in React Native as he uses
+              the content I created to create new lecture and homework
+              materials.
+            </p>
+            <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
+              <a class="github-icon" href="https://github.com/wenbingcsu/reactnative"><i
+                  class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="card is-fullwidth mt-6 slideUp5">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            Progressive Inner Source Quality Assurance F# Automation Tool
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content extended hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                Working with the same quality assurance engineer as the Planster
-                side project and one other, we found a need for a lightweight
-                solution for complex feature testing scenarios. The solution we
-                came up with was using F# (a functional programming language
-                that has concise syntax) and its corresponding
-                <a href="https://www.selenium.dev/"
-                  >Selenium Browser Automation</a
-                >
-                wrapper called
-                <a href="https://lefthandedgoat.github.io/canopy/">Canopy</a> to
-                create an internal application.
-              </p>
-              <p>
-                This tool was successful in saving time and money by removing
-                human error allowing for rapid and safer testing. It can be
-                extended to fit other feature needs and was documented as an
-                internal <a href="https://www.lean.org/">LEAN</a> Testimonial.
-                Note - since I developed this code for internal use it is not
-                publicly available
-              </p>
+    <div class="card is-fullwidth slideUp5 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          Progressive Inner Source Quality Assurance F# Automation Tool
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content extended hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              Working with the same quality assurance engineer as the Planster
+              side project and one other, we found a need for a lightweight
+              solution for complex feature testing scenarios. The solution we
+              came up with was using F# (a functional programming language
+              that has concise syntax) and its corresponding
+              <a href="https://www.selenium.dev/">Selenium Browser Automation</a>
+              wrapper called
+              <a href="https://lefthandedgoat.github.io/canopy/">Canopy</a> to
+              create an internal application.
+            </p>
+            <p>
+              This tool was successful in saving time and money by removing
+              human error allowing for rapid and safer testing. It can be
+              extended to fit other feature needs and was documented as an
+              internal <a href="https://www.lean.org/">LEAN</a> Testimonial.
+              Note - since I developed this code for internal use it is not
+              publicly available
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card is-fullwidth slideUp6 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          Planster - Progressive Inner Source Quality Assurance Workbook
+          Manager Tool
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content extended hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              While an intern at Progressive Insurance, a quality assurance
+              engineer approached me about working together on a work side
+              project to create a better system for managing test work books
+              over the lifecycle of our projects. Using her as the business
+              customer we worked together and created a solution.
+            </p>
+            <p>
+              Although nothing sensitive was used in the creation of Planster,
+              I don't have the code publicly hosted to be safe. The core tech
+              stack used <a href="https://angular.io/">Angular</a> as the
+              frontend framework, <a href="https://ngrx.io/">NgRx</a> for
+              state management,
+              <a href="https://material.angular.io/">Angular Material</a> for
+              styling,
+              <a href="https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0">ASP .NET Core</a>
+              for the server / api and Azure's
+              <a href="https://azure.microsoft.com/en-us/services/cosmos-db/">CosmosDB</a>
+              for data storage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card is-fullwidth slideUp7 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          Progressive Inner Source Bug Analysis Excel Macro
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content extended-xl hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              During my first internship my manager had came to me with a side
+              project to keep me busy in any down time I may have. The
+              motivation behind the project came from her spending hours
+              importing and manipulating data regarding to bugs in Azure Dev
+              Ops. She wanted me to see if I was able to automate this process
+              to save her time on her quarterly reports. I ended up being able
+              to do exactly that which saved a few hours of business time each
+              quarter. Furthermore, I presented and demoed the side project to
+              multiple group managers and directors withing the IT department!
+            </p>
+            <p>
+              Since this project was done internally for my manager using
+              Progressive Data it is obviously not publicly available, with
+              that said, the tech stack consisted of using Virtual Basic for
+              Applications within Microsoft Excel and creating an easily
+              distributable batch script that installs itself to the Excel
+              ribbon automatically using the user variable. The application
+              then ran on top of the users excel window providing a user
+              interface for filtering and creating dynamic analysis graphs of
+              the selected data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card is-fullwidth slideUp8 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">Portfolio Website (old)</p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              During my first year at Cleveland State I took a class that
+              focused on our professional development by helping us create
+              resume's, practice interviewing and much more. Although I had no
+              web development experience, I wanted to be able to create a
+              simple portfolio website that could show people my experience
+              and accomplishments at a glance. Since then I have now created
+              the website that you are on now to serve as a more advanced
+              version but
+              <a href="https://bk-csu.webflow.io/">click here</a> to check out
+              my first look at web development by creating my own portfolio
+              website using <a href="https://webflow.com/">webflow</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card is-fullwidth slideUp9 mt-6">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          Rust Calculator - Google Play Store Utility Application for the PC
+          Game
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content hide">
+        <div class="content animate__animated is-hidden">
+          <div class="is-flex is-flex-direction-column p-5">
+            <h5>Description:</h5>
+            <p>
+              What started it all - my very first project back in my senior
+              year of highschool. This app was created to help calculate
+              resources needed in a popular PC game my friends and I played at
+              the time. While rudimentary at best, it gave me an introduction
+              to programming as well as the world of doing side projects
+              beyond the scope of my academic/work career. Surprisingly, it
+              went on to get over 5,000 downloads from multiple countries and
+              has ~3.5 stars on on the Google Play Store!
+            </p>
+            <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
+              <a class="playstore-icon mr-5"
+                href="https://play.google.com/store/apps/details?id=a61699.brandon.kelley.rustcalculator&hl=en_US&gl=US"><i
+                  class="fab fa-google-play is-size-2-mobile fa-3x"></i></a><a class="github-icon"
+                href="https://github.com/bkelley616/Rust-Calculator-1.0"><i
+                  class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+</body>
 
-      <div class="card is-fullwidth mt-6 slideUp6">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            Planster - Progressive Inner Source Quality Assurance Workbook
-            Manager Tool
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content extended hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                While an intern at Progressive Insurance, a quality assurance
-                engineer approached me about working together on a work side
-                project to create a better system for managing test work books
-                over the lifecycle of our projects. Using her as the business
-                customer we worked together and created a solution.
-              </p>
-              <p>
-                Although nothing sensitive was used in the creation of Planster,
-                I don't have the code publicly hosted to be safe. The core tech
-                stack used <a href="https://angular.io/">Angular</a> as the
-                frontend framework, <a href="https://ngrx.io/">NgRx</a> for
-                state management,
-                <a href="https://material.angular.io/">Angular Material</a> for
-                styling,
-                <a
-                  href="https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0"
-                  >ASP .NET Core</a
-                >
-                for the server / api and Azure's
-                <a href="https://azure.microsoft.com/en-us/services/cosmos-db/"
-                  >CosmosDB</a
-                >
-                for data storage.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card is-fullwidth mt-6 slideUp7">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            Progressive Inner Source Bug Analysis Excel Macro
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content extended-xl hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                During my first internship my manager had came to me with a side
-                project to keep me busy in any down time I may have. The
-                motivation behind the project came from her spending hours
-                importing and manipulating data regarding to bugs in Azure Dev
-                Ops. She wanted me to see if I was able to automate this process
-                to save her time on her quarterly reports. I ended up being able
-                to do exactly that which saved a few hours of business time each
-                quarter. Furthermore, I presented and demoed the side project to
-                multiple group managers and directors withing the IT department!
-              </p>
-              <p>
-                Since this project was done internally for my manager using
-                Progressive Data it is obviously not publicly available, with
-                that said, the tech stack consisted of using Virtual Basic for
-                Applications within Microsoft Excel and creating an easily
-                distributable batch script that installs itself to the Excel
-                ribbon automatically using the user variable. The application
-                then ran on top of the users excel window providing a user
-                interface for filtering and creating dynamic analysis graphs of
-                the selected data.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card is-fullwidth mt-6 slideUp8">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">Portfolio Website (old)</p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                During my first year at Cleveland State I took a class that
-                focused on our professional development by helping us create
-                resume's, practice interviewing and much more. Although I had no
-                web development experience, I wanted to be able to create a
-                simple portfolio website that could show people my experience
-                and accomplishments at a glance. Since then I have now created
-                the website that you are on now to serve as a more advanced
-                version but
-                <a href="https://bk-csu.webflow.io/">click here</a> to check out
-                my first look at web development by creating my own portfolio
-                website using <a href="https://webflow.com/">webflow</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card is-fullwidth mt-6 slideUp9">
-        <header class="card-header">
-          <p class="card-header-title is-size-4">
-            Rust Calculator - Google Play Store Utility Application for the PC
-            Game
-          </p>
-          <a class="card-header-icon card-toggle">
-            <i class="fa fa-angle-down is-size-2"></i>
-          </a>
-        </header>
-        <div class="card-content hide">
-          <div class="content animate__animated is-hidden">
-            <div class="is-flex is-flex-direction-column p-5">
-              <h5>Description:</h5>
-              <p>
-                What started it all - my very first project back in my senior
-                year of highschool. This app was created to help calculate
-                resources needed in a popular PC game my friends and I played at
-                the time. While rudimentary at best, it gave me an introduction
-                to programming as well as the world of doing side projects
-                beyond the scope of my academic/work career. Surprisingly, it
-                went on to get over 5,000 downloads from multiple countries and
-                has ~3.5 stars on on the Google Play Store!
-              </p>
-              <div
-                class="
-                  is-flex
-                  is-flex-direction-row
-                  is-justify-content-flex-end
-                  is-align-items-center
-                "
-              >
-                <a
-                  class="playstore-icon mr-5"
-                  href="https://play.google.com/store/apps/details?id=a61699.brandon.kelley.rustcalculator&hl=en_US&gl=US"
-                  ><i class="fab fa-google-play is-size-2-mobile fa-3x"></i></a
-                ><a
-                  class="github-icon"
-                  href="https://github.com/bkelley616/Rust-Calculator-1.0"
-                  ><i class="fab fa-github-square is-size-2-mobile fa-3x"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
 </html>
 
 <script>
@@ -476,10 +400,29 @@
     }
   }
   document.addEventListener("DOMContentLoaded", function () {
-    let cards = document.getElementsByClassName("card-toggle")
     let cardToggles = document.getElementsByClassName("card-toggle")
     for (let i = 0; i < cardToggles.length; i++) {
       cardToggles[i].addEventListener("click", (e) => {
+        e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle(
+          "hide"
+        )
+        e.currentTarget.parentElement.parentElement.childNodes[3].childNodes[1].classList.toggle(
+          "is-hidden"
+        )
+
+        e.currentTarget.parentElement.parentElement.childNodes[3].childNodes[1].classList.toggle(
+          "fadeIn"
+        )
+
+        e.currentTarget.parentElement.childNodes[3].childNodes[1].classList.toggle(
+          "rotate"
+        )
+      })
+    }
+
+    let cardBodyToggles = document.getElementsByClassName("card-header-title")
+    for (let i = 0; i < cardBodyToggles.length; i++) {
+      cardBodyToggles[i].addEventListener("click", (e) => {
         e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle(
           "hide"
         )
