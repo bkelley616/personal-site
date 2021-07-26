@@ -324,3 +324,10 @@ a {
   animation-delay: 2.25s;
   animation-duration: 0.45s;
 }
+
+.slideUp10 {
+  animation: fadeInUp;
+  animation-fill-mode: both;
+  animation-delay: 2.50s;
+  animation-duration: 0.40s;
+}
