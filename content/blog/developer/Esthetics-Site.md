@@ -1,7 +1,7 @@
 +++
 title = "Friend's Esthetics Site"
 description = "My latest website I created for my friend who recently graduated from esthetics school"
-date = 2021-07-07
+date = 2021-07-26
 [extra]
 banner = "esthetics-site.jpg"
 +++
