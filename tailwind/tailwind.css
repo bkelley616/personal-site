@@ -31,39 +31,39 @@
   }
 
   button {
-    @apply focus:outline-none focus:ring-2  focus:ring-accent-blue-color focus:rounded;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-blue-color focus:rounded;
   }
 
   button:active {
-    @apply outline-none ring-2 ring-accent-blue-color rounded;
+    @apply rounded outline-none ring-2 ring-accent-blue-color;
   }
 
   pre {
-    @apply text-primary-text-color p-4 overflow-auto rounded-xl;
+    @apply p-4 overflow-auto text-primary-text-color rounded-xl;
   }
 
   h1 {
-    @apply text-primary-text-color text-5xl font-bold leading-normal mt-0 mb-2;
+    @apply mt-0 mb-2 text-5xl font-bold leading-normal text-primary-text-color;
   }
 
   h2 {
-    @apply text-primary-text-color text-4xl font-bold leading-normal mt-0 mb-2;
+    @apply mt-0 mb-2 text-4xl font-bold leading-normal text-primary-text-color;
   }
 
   h3 {
-    @apply text-primary-text-color text-3xl font-bold leading-normal mt-0 mb-2;
+    @apply mt-0 mb-2 text-3xl font-bold leading-normal text-primary-text-color;
   }
 
   h4 {
-    @apply text-primary-text-color text-2xl font-bold leading-normal mt-0 mb-2;
+    @apply mt-0 mb-2 text-2xl font-bold leading-normal text-primary-text-color;
   }
 
   h5 {
-    @apply text-primary-text-color text-xl font-bold leading-normal mt-0 mb-2;
+    @apply mt-0 mb-2 text-xl font-bold leading-normal text-primary-text-color;
   }
 
   h6 {
-    @apply text-primary-text-color text-lg font-bold leading-normal mt-0 mb-2;
+    @apply mt-0 mb-2 text-lg font-bold leading-normal text-primary-text-color;
   }
 
   ul {
@@ -71,7 +71,7 @@
   }
 
   li {
-    @apply ml-4 my-2;
+    @apply my-2 ml-4;
   }
 
   blockquote {
@@ -81,11 +81,11 @@
 
 
   a {
-    @apply focus:outline-none focus:ring-2  focus:ring-accent-blue-color focus:rounded;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-blue-color focus:rounded;
   }
 
   a.post-card {
-    @apply focus:outline-none focus:ring-2  focus:ring-accent-blue-color focus:rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-blue-color focus:rounded-lg;
   }
 
   *.disable-default-focus {
@@ -93,7 +93,7 @@
   }
 
   *.disable-default-focus:active {
-    @apply outline-none ring-0 rounded-none;
+    @apply rounded-none outline-none ring-0;
   }
 
   .modal-body {
@@ -116,7 +116,7 @@
   }
 
   .menuLink {
-    @apply disable-default-focus block rounded-md px-3 py-2 text-base text-secondary-text-color font-medium hover:bg-accent-blue-color hover:text-black focus:bg-accent-blue-color focus:text-black focus:rounded-md;
+    @apply block px-3 py-2 text-base font-medium rounded-md disable-default-focus text-secondary-text-color hover:bg-accent-blue-color hover:text-black focus:bg-accent-blue-color focus:text-black focus:rounded-md;
     background: linear-gradient(
         to left,
         var(--popup-background-color) 50%,
@@ -139,7 +139,7 @@
   }
 
   .subnav-link {
-    @apply text-secondary-text-color hover:bg-accent-blue-color hover:text-black hover:rounded-md py-2 px-3 inline-flex items-center text-sm font-medium;
+    @apply inline-flex items-center px-3 py-2 text-sm font-medium text-secondary-text-color hover:bg-accent-blue-color hover:text-black hover:rounded-md;
     transition: border-bottom 0.2s;
   }
   .subnav-link:hover {
@@ -156,7 +156,7 @@
   }
 
   .scroll-to-top-button {
-    @apply bg-accent-purple-color-variant shadow-md text-black flex justify-center p-3 rounded-full focus:rounded-full;
+    @apply flex justify-center p-3 text-black rounded-full shadow-md bg-accent-purple-color-variant focus:rounded-full;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -177,19 +177,19 @@
   }
 
   .footer-link {
-    @apply text-base text-tertiary-text-color hover:text-accent-blue-color transition-colors duration-200;
+    @apply text-base transition-colors duration-200 text-tertiary-text-color hover:text-accent-blue-color;
   }
 
   .footer-icon {
-    @apply text-tertiary-text-color hover:text-accent-blue-color transition-colors duration-200;
+    @apply transition-colors duration-200 text-tertiary-text-color hover:text-accent-blue-color;
   }
 
   .paginator {
-    @apply disable-default-focus border-t-2 border-transparent pt-4 inline-flex items-center text-sm font-medium text-tertiary-text-color hover:text-accent-blue-color hover:border-accent-blue-color focus:text-accent-blue-color focus:border-accent-blue-color;
+    @apply inline-flex items-center pt-4 text-sm font-medium border-t-2 border-transparent disable-default-focus text-tertiary-text-color hover:text-accent-blue-color hover:border-accent-blue-color focus:text-accent-blue-color focus:border-accent-blue-color;
   }
 
   .paginator-icon {
-    @apply h-5 w-5 text-tertiary-text-color group-hover:text-accent-blue-color group-focus:text-accent-blue-color;
+    @apply w-5 h-5 text-tertiary-text-color group-hover:text-accent-blue-color group-focus:text-accent-blue-color;
   }
 
   input[type="search"]::-webkit-search-decoration,
@@ -216,7 +216,7 @@
   https://blog.prototypr.io/how-to-create-placeholder-loading-animations-in-css-2334255aa74c
   */
   .loading-container {
-    @apply bg-secondary-background-color rounded-lg shadow-md pointer-events-none;
+    @apply rounded-lg shadow-md pointer-events-none bg-secondary-background-color;
     position: relative;
     overflow: hidden;
   }
@@ -265,7 +265,6 @@
   }
 
   a.content-link {
-    
     color: var(--accent-blue-color);
     box-shadow: inset 0 -0.125em 0 0 var(--secondary-background-color),
       inset 0 -0.375em 0 0 var(--accent-blue-color-lowlight);

@@ -124,4 +124,10 @@ label a {
   text-decoration: none;
 }
 
-
+#menu-panel {
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+#menu-panel.fade-in {
+  opacity: 1;
+}
