@@ -18,9 +18,9 @@
 
 <body>
   {% include "static/partials/menu.html" %}
-  <section id="content" class="content-container container px-5">
+  <section id="content" class="container px-5 content-container">
     <div
-      class=" header-section animate__animated is-flex is-align-items-center is-justify-content-space-between pb-5 mt-3 mb-5">
+      class="pb-5 mt-3 mb-5 header-section animate__animated is-flex is-align-items-center is-justify-content-space-between">
       <h2 class="title is-1 header">Projects</h2>
       <a class="animate__animated button github-button" href="https://github.com/bkelley616?tab=repositories">
         <span class="icon">
@@ -30,7 +30,40 @@
       </a>
     </div>
 
-    <div class="card is-fullwidth animate__animated slideUp1 mt-6">
+    <div class="mt-6 card is-fullwidth animate__animated slideUp1">
+      <header class="card-header">
+        <p class="card-header-title is-size-4">
+          www.languor.co - web game site
+        </p>
+        <a class="card-header-icon card-toggle">
+          <i class="fa fa-angle-down is-size-2"></i>
+        </a>
+      </header>
+      <div class="card-content extended hide">
+        <div class="content animate__animated is-hidden">
+          <div class="p-5 is-flex is-flex-direction-column">
+            <h5>Description:</h5>
+            <p>
+              You can find the website at <a href="https://www.languor.co/"> www.languor.co </a>. This project was done to learn Elixir, the Phoenix Framework and functional programming in general, see below for details!
+            </p>
+            <ul>
+              <li>
+                 Built with the <a href="https://www.phoenixframework.org/">Phoenix Framework</a> and uses <a href="https://www.gigalixir.com/">Gigalixir</a> PAAS to host
+              </li>
+              <li>
+                PETAL tech stack- Phoenix, Elixir, <a href="https://tailwindcss.com/">Tailwind</a> for the styling library, <a href="https://alpinejs.dev/">AlpineJS</a> for light weight inline javascript functionality, and (Phoenix) <a href="https://github.com/phoenixframework/phoenix_live_view">LiveView</a> for real time interaction
+              </li>
+            </ul>
+            <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
+              <a class="github-icon" href="https://github.com/bkelley616/languor"><i
+                  class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 card is-fullwidth animate__animated slideUp2">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           www.me-esthetics.com - Friend's Esthetics Website 
@@ -41,7 +74,7 @@
       </header>
       <div class="card-content extended hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               You can find the website at <a href="https://www.me-esthetics.com/"> www.me-esthetics.com </a>. Through creating this website I learned a lot about website design and animation, see the tech stack below!
@@ -58,7 +91,7 @@
               </li>
             </ul>
             <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
-              <a class="github-icon" href="https://github.com/bkelley616/"><i
+              <a class="github-icon" href="https://github.com/bkelley616/me-esthetics.com"><i
                   class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
           </div>
@@ -66,7 +99,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth animate__animated slideUp2 mt-6">
+    <div class="mt-6 card is-fullwidth animate__animated slideUp3">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           bkelley.me - Personal Website / Blog using Zola
@@ -77,7 +110,7 @@
       </header>
       <div class="card-content hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               You are currently on it - it's this website! It was created
@@ -112,7 +145,7 @@
               </li>
             </ul>
             <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
-              <a class="github-icon" href="https://github.com/bkelley616/"><i
+              <a class="github-icon" href="https://github.com/bkelley616/personal-site"><i
                   class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
           </div>
@@ -120,7 +153,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth animate__animated slideUp3 mt-6">
+    <div class="mt-6 card is-fullwidth animate__animated slideUp4">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           KUMetriX - Stock Tracker Web Application
@@ -131,7 +164,7 @@
       </header>
       <div class="card-content hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               A stock tracker app built with the
@@ -153,7 +186,7 @@
               <li>Secrets/Environment variables using config.json</li>
             </ul>
             <div class=" is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
-              <a class="is-size-5 mx-5">Demo Site</a>
+              <a class="mx-5 is-size-5">Demo Site</a>
               <a class="github-icon" href="https://github.com/bkelley616/KUMetriX-Public"><i
                   class="fab fa-github-square is-size-2-mobile fa-3x"></i></a>
             </div>
@@ -162,7 +195,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth slideUp4 mt-6">
+    <div class="mt-6 card is-fullwidth slideUp5">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           URL Classification - ML Classification Algorithm Comparisons in F#
@@ -174,7 +207,7 @@
       </header>
       <div class="card-content hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               This project uses the
@@ -202,7 +235,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth slideUp5 mt-6">
+    <div class="mt-6 card is-fullwidth slideUp6">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           CIS 470 Mobile App Development - React Native Port
@@ -213,7 +246,7 @@
       </header>
       <div class="card-content extended-xl hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               Upon starting CIS 470 - Mobile App Development my senior year
@@ -244,7 +277,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth slideUp6 mt-6">
+    <div class="mt-6 card is-fullwidth slideUp7">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           Progressive Inner Source Quality Assurance F# Automation Tool
@@ -255,7 +288,7 @@
       </header>
       <div class="card-content extended hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               Working with the same quality assurance engineer as the Planster
@@ -281,7 +314,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth slideUp7 mt-6">
+    <div class="mt-6 card is-fullwidth slideUp8">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           Planster - Progressive Inner Source Quality Assurance Workbook
@@ -293,7 +326,7 @@
       </header>
       <div class="card-content extended hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               While an intern at Progressive Insurance, a quality assurance
@@ -320,7 +353,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth slideUp8 mt-6">
+    <div class="mt-6 card is-fullwidth slideUp9">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           Progressive Inner Source Bug Analysis Excel Macro
@@ -331,7 +364,7 @@
       </header>
       <div class="card-content extended-xl hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               During my first internship my manager had came to me with a side
@@ -360,7 +393,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth slideUp9 mt-6">
+    <div class="mt-6 card is-fullwidth slideUp10">
       <header class="card-header">
         <p class="card-header-title is-size-4">Portfolio Website (old)</p>
         <a class="card-header-icon card-toggle">
@@ -369,7 +402,7 @@
       </header>
       <div class="card-content hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               During my first year at Cleveland State I took a class that
@@ -389,7 +422,7 @@
       </div>
     </div>
 
-    <div class="card is-fullwidth slideUp10 mt-6">
+    <div class="mt-6 card is-fullwidth slideUp11">
       <header class="card-header">
         <p class="card-header-title is-size-4">
           Rust Calculator - Google Play Store Utility Application for the PC
@@ -401,7 +434,7 @@
       </header>
       <div class="card-content hide">
         <div class="content animate__animated is-hidden">
-          <div class="is-flex is-flex-direction-column p-5">
+          <div class="p-5 is-flex is-flex-direction-column">
             <h5>Description:</h5>
             <p>
               What started it all - my very first project back in my senior
@@ -414,7 +447,7 @@
               has ~3.5 stars on on the Google Play Store!
             </p>
             <div class=" is-flex is-flex-direction-row is-justify-content-flex-end is-align-items-center">
-              <a class="playstore-icon mr-5"
+              <a class="mr-5 playstore-icon"
                 href="https://play.google.com/store/apps/details?id=a61699.brandon.kelley.rustcalculator&hl=en_US&gl=US"><i
                   class="fab fa-google-play is-size-2-mobile fa-3x"></i></a><a class="github-icon"
                 href="https://github.com/bkelley616/Rust-Calculator-1.0"><i
